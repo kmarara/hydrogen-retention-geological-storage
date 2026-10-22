@@ -1,0 +1,208 @@
+{
+  "model_info": {
+    "architecture": "PINN 4-layer Tanh + PR-EOS physics",
+    "learned_Tc_K": 33.20000076293945,
+    "learned_Pc_MPa": 1.2999999523162842,
+    "learned_omega": -0.2160000056028366
+  },
+  "reservoir_conditions": {
+    "272": {
+      "name": "Region 272 (Kalahari Basin)",
+      "depth_km": 2.5,
+      "P_MPa": 25,
+      "T_K": 360,
+      "Sal_ppm": 50000
+    },
+    "69": {
+      "name": "Region 69 (Orange Basin)",
+      "depth_km": 3.0,
+      "P_MPa": 30,
+      "T_K": 380,
+      "Sal_ppm": 80000
+    },
+    "413": {
+      "name": "Region 413 (Zululand)",
+      "depth_km": 2.0,
+      "P_MPa": 20,
+      "T_K": 340,
+      "Sal_ppm": 120000
+    },
+    "65": {
+      "name": "Region 65 (Namib)",
+      "depth_km": 1.8,
+      "P_MPa": 18,
+      "T_K": 330,
+      "Sal_ppm": 150000
+    },
+    "95": {
+      "name": "Region 95 (Etosha)",
+      "depth_km": 2.2,
+      "P_MPa": 22,
+      "T_K": 350,
+      "Sal_ppm": 60000
+    }
+  },
+  "ift_predictions": {
+    "272": {
+      "IFT_mN_m": 9.421353340148926,
+      "conditions": {
+        "name": "Region 272 (Kalahari Basin)",
+        "depth_km": 2.5,
+        "P_MPa": 25,
+        "T_K": 360,
+        "Sal_ppm": 50000
+      },
+      "safety_penalty": 0.5,
+      "safety_score": 0.5,
+      "ift_mean": 0.08879174139350653,
+      "ift_std": 0.07813517288936804,
+      "ift_ci_95": 0.15314493886316136
+    },
+    "69": {
+      "IFT_mN_m": 9.421353340148926,
+      "conditions": {
+        "name": "Region 69 (Orange Basin)",
+        "depth_km": 3.0,
+        "P_MPa": 30,
+        "T_K": 380,
+        "Sal_ppm": 80000
+      },
+      "safety_penalty": 0.5,
+      "safety_score": 0.5,
+      "ift_mean": 0.07362107992172241,
+      "ift_std": 0.08288691201646167,
+      "ift_ci_95": 0.16245834755226488
+    },
+    "413": {
+      "IFT_mN_m": 9.421353340148926,
+      "conditions": {
+        "name": "Region 413 (Zululand)",
+        "depth_km": 2.0,
+        "P_MPa": 20,
+        "T_K": 340,
+        "Sal_ppm": 120000
+      },
+      "safety_penalty": 0.5,
+      "safety_score": 0.5,
+      "ift_mean": 0.09556600254029035,
+      "ift_std": 0.07732783640794484,
+      "ift_ci_95": 0.15156255935957189
+    },
+    "65": {
+      "IFT_mN_m": 9.421353340148926,
+      "conditions": {
+        "name": "Region 65 (Namib)",
+        "depth_km": 1.8,
+        "P_MPa": 18,
+        "T_K": 330,
+        "Sal_ppm": 150000
+      },
+      "safety_penalty": 0.5,
+      "safety_score": 0.5,
+      "ift_mean": 0.08602586906403303,
+      "ift_std": 0.0786766263551707,
+      "ift_ci_95": 0.15420618765613456
+    },
+    "95": {
+      "IFT_mN_m": 9.421353340148926,
+      "conditions": {
+        "name": "Region 95 (Etosha)",
+        "depth_km": 2.2,
+        "P_MPa": 22,
+        "T_K": 350,
+        "Sal_ppm": 60000
+      },
+      "safety_penalty": 0.5,
+      "safety_score": 0.5,
+      "ift_mean": 0.07498079597949982,
+      "ift_std": 0.07268589152257555,
+      "ift_ci_95": 0.1424643473842481
+    }
+  },
+  "integrated_scores": {
+    "95": {
+      "strategic_score": 0.7204264505533222,
+      "safety_score": 0.5,
+      "integrated_score": 0.6542985153873255,
+      "IFT_mN_m": 9.421353340148926,
+      "conditions": {
+        "name": "Region 95 (Etosha)",
+        "depth_km": 2.2,
+        "P_MPa": 22,
+        "T_K": 350,
+        "Sal_ppm": 60000
+      },
+      "decision": "\u2705 GO",
+      "ift_ci_95": 0.1424643473842481
+    },
+    "272": {
+      "strategic_score": 0.7162559129373722,
+      "safety_score": 0.5,
+      "integrated_score": 0.6513791390561605,
+      "IFT_mN_m": 9.421353340148926,
+      "conditions": {
+        "name": "Region 272 (Kalahari Basin)",
+        "depth_km": 2.5,
+        "P_MPa": 25,
+        "T_K": 360,
+        "Sal_ppm": 50000
+      },
+      "decision": "\u2705 GO",
+      "ift_ci_95": 0.15314493886316136
+    },
+    "69": {
+      "strategic_score": 0.7069398664887973,
+      "safety_score": 0.5,
+      "integrated_score": 0.644857906542158,
+      "IFT_mN_m": 9.421353340148926,
+      "conditions": {
+        "name": "Region 69 (Orange Basin)",
+        "depth_km": 3.0,
+        "P_MPa": 30,
+        "T_K": 380,
+        "Sal_ppm": 80000
+      },
+      "decision": "\u26a0\ufe0f CONDITIONAL GO",
+      "ift_ci_95": 0.16245834755226488
+    },
+    "65": {
+      "strategic_score": 0.7047406698715107,
+      "safety_score": 0.5,
+      "integrated_score": 0.6433184689100575,
+      "IFT_mN_m": 9.421353340148926,
+      "conditions": {
+        "name": "Region 65 (Namib)",
+        "depth_km": 1.8,
+        "P_MPa": 18,
+        "T_K": 330,
+        "Sal_ppm": 150000
+      },
+      "decision": "\u26a0\ufe0f CONDITIONAL GO",
+      "ift_ci_95": 0.15420618765613456
+    },
+    "413": {
+      "strategic_score": 0.7040795871741667,
+      "safety_score": 0.5,
+      "integrated_score": 0.6428557110219166,
+      "IFT_mN_m": 9.421353340148926,
+      "conditions": {
+        "name": "Region 413 (Zululand)",
+        "depth_km": 2.0,
+        "P_MPa": 20,
+        "T_K": 340,
+        "Sal_ppm": 120000
+      },
+      "decision": "\u26a0\ufe0f CONDITIONAL GO",
+      "ift_ci_95": 0.15156255935957189
+    }
+  },
+  "weights": {
+    "strategic": 0.7,
+    "safety": 0.3
+  },
+  "decision_thresholds": {
+    "go": 0.65,
+    "conditional_go": 0.55,
+    "safety_min": 0.5
+  }
+}

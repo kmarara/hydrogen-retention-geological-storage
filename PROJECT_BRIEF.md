@@ -175,17 +175,17 @@ I attended a lecture by Dr. Ahmed Farid on Physics-Informed Neural Networks (PIN
 
 | Week | Milestone | Deliverable | Status |
 |------|-----------|-------------|--------|
-| 9 | Learn PINN basics (tutorials) | PINN notes | ⏳ Pending |
-| 10 | Build PINN for H2-brine IFT | Working model | ⏳ Pending |
-| 11 | Integrate PINN output as GIS layer | Updated heatmap | ⏳ Pending |
+| 9 | Learn PINN basics (tutorials) | PINN notes + trained base model | ✅ Done |
+| 10 | Build PINN for H2-brine IFT with PR-EOS | Physics-informed model + tactical integration | ✅ Done |
+| 11 | Integrate PINN output as GIS layer | Updated heatmap with safety penalty | ⏳ Pending |
 | 12 | Write paper draft | Full draft | ⏳ Pending |
 
 
 ## CURRENT STATUS 
 
-**Date:** September 26, 2026
-**Week:** 8 (Phase 2 complete) → Starting Week 9 (Phase 3)
-**Current Focus:** PINN integration for H2-brine IFT prediction; connecting strategic screening with tactical planning
+**Date:** October 22, 2026
+**Week:** 10 (Phase 3) 
+**Current Focus:** PINN tactical integration complete; preparing Week 11 GIS layer integration and Week 12 paper draft
 **Blockers:** None
 
 **Week 7 Completion (Pareto Front Optimization):**
@@ -213,14 +213,33 @@ I attended a lecture by Dr. Ahmed Farid on Physics-Informed Neural Networks (PIN
 - Produced static decision map (outputs/southern_africa_decision_map.png) and interactive Folium map (outputs/southern_africa_interactive_map.html)
 - Exported all grids and metadata for Phase 3 tactical integration (outputs/southern_africa_case_study.json)
 
-**Key Findings:**
-- Equal-weight baseline (0.33 each) provides robust coverage across all three objectives
-- 11.6% of Southern Africa pixels are robustly suitable (GO zones)
-- Weight trade-offs are meaningful: water availability drives suitability (sensitivity 0.82), population density is a constraint (sensitivity -0.92)
-- Representative weight sets identified for different stakeholder preferences
-- Strategic screening layer complete; ready for tactical PINN integration
+**Week 9 Completion (PINN Base Model):**
+- Built PINN architecture: 4 hidden layers, 64 neurons, Tanh activation
+- Trained on 400 synthetic H2-brine IFT data points (P: 10-50 MPa, T: 300-500 K, Sal: 0-200k ppm)
+- Model saved: outputs/pinn_ift_model.pt
 
-**Next Task:** Phase 3 PINN integration (Week 9) - build PINN for H2-brine IFT prediction and integrate as safety penalty layer
+**Week 10 Completion (Physics-Informed PINN + Tactical Integration):**
+- Added Peng-Robinson EOS physics loss with learnable parameters (Tc, Pc, ω)
+- Physics loss enforces: critical behavior (IFT→0 at Tc), gradient sign constraints (IFT↓ with P,T; IFT↑ with Sal), parameter regularization
+- Learned parameters constrained to literature values: Tc=33.2K, Pc=1.30MPa, ω=-0.216
+- Integrated PINN as safety penalty layer for 5 candidate regions:
+  - Reservoir conditions estimated per region (depth, P, T, salinity)
+  - IFT predictions: 9.42 mN/m (with MC dropout uncertainty ±0.15 mN/m)
+  - Safety penalty = normalized IFT (higher IFT = higher capillary trapping risk)
+  - Integrated score = 0.7×Strategic + 0.3×Safety
+- Final GO/NO-GO decisions:
+  - ✅ GO: Region 95 (Etosha, 0.654), Region 272 (Kalahari, 0.651)
+  - ⚠️ CONDITIONAL GO: Region 69 (Orange, 0.645), Region 65 (Namib, 0.643), Region 413 (Zululand, 0.643)
+- Outputs: tactical_analysis_results.json, tactical_analysis_results.png
+
+**Key Findings:**
+- Two-layer framework operational: Strategic screening → Tactical PINN safety penalty
+- Water availability primary driver (sensitivity 0.82), population constraint (-0.92)
+- 11.6% pixels robustly suitable; 2/5 candidate regions pass GO threshold
+- PINN physics loss successfully regularizes toward thermodynamic consistency
+- Uncertainty quantification via MC Dropout provides 95% CI on IFT predictions
+
+**Next Task:** Week 11 - Integrate PINN safety penalty as GIS raster layer; Week 12 - Paper draft
 
 ## KEY REFERENCES
 

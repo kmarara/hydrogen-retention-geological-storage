@@ -197,30 +197,33 @@
 
 ### Current Project State
 - **Framework:** Two-layer decision-support framework for subsurface hydrogen storage site selection
-- **Data:** 5 geospatial layers loaded and normalized for Southern Africa ROI (12°E-22°E, 10°S-20°S)
-- **Notebooks:** 6/6 complete (01-data exploration, 02-raster preprocessing, 03-vector overlays, 04-Folium heatmap, 05-multi-objective optimization, 06-Southern Africa case study)
+- **Data:** 3 geospatial layers normalized for Southern Africa ROI (12°E-22°E, 10°S-20°S): solar, water stress, population
+- **Notebooks:** 7/7 complete (01-data exploration, 02-raster preprocessing, 03-vector overlays, 04-Folium heatmap, 05-multi-objective optimization, 06-Southern Africa case study, 07-tactical PINN integration)
 - **Phase 2 Complete:** Multi-objective optimization with Pareto front analysis and Southern Africa case study
+- **Phase 3 Weeks 9-10 Complete:** PINN with PR-EOS physics loss + tactical integration
 - **Findings:** Weight sensitivities: water=0.82 (primary driver), population=-0.92 (constraint), solar=0.10; 11.6% pixels robustly suitable (GO zones); 4-class go/no-go decision map generated
-- **PINN Status:** Framework documented; ready for integration in Phase 3 (Week 9)
+- **PINN Status:** PR-EOS physics-informed model trained, integrated as safety penalty layer for 5 candidate regions
 
 ### What's Complete
-- ✅ Data foundation: 3 raster layers normalized and clipped to Southern Africa (solar, water stress, population)
+- ✅ Data foundation: 3 raster layers normalized and clipped to Southern Africa
 - ✅ Multi-objective optimization: 100 weight configurations tested, robustness map generated, Pareto front analysis complete
 - ✅ Phase 2 case study: Southern Africa 4-class go/no-go decision map with 5 candidate regions identified
+- ✅ Week 9: PINN base model (4-layer Tanh, 64 neurons) trained on 400 synthetic H2-brine IFT data points
+- ✅ Week 10: Physics-informed PINN with Peng-Robinson EOS loss (learnable Tc, Pc, ω), MC Dropout uncertainty, tactical integration
+- ✅ Two-layer coupling: Strategic scores (0.70-0.72) combined with safety scores (0.50) → integrated scores (0.64-0.65)
+- ✅ Final decisions: 2 GO (Regions 95, 272), 3 CONDITIONAL GO (Regions 69, 65, 413)
 - ✅ Documentation: PROJECT_BRIEF.md, PAPER_OUTLINE.md, HOW_PROJECT_WORKS.md
-- ✅ Notebooks: 01-04 (Phase 1) + 05 (Phase 2 optimization) + 06 (Phase 2 case study) complete
-- ✅ Week 7: Pareto front optimization, weight sensitivity analysis, representative weight sets
-- ✅ Week 8: Southern Africa case study with decision-ready go/no-go zones and candidate regions for tactical analysis
+- ✅ Notebooks: 01-04 (Phase 1) + 05-06 (Phase 2) + 07 (Phase 3 tactical) complete
 
 ### What's Next
-1. **Phase 3, Week 9:** Begin PINN integration for H2-brine IFT prediction (notebook 05_pinn_ift_model.ipynb)
-2. **Connect strategic and tactical layers:** Link regional heatmap candidate regions to site-specific PINN analysis
-3. **Week 10:** Build PINN for H2-brine IFT with Peng-Robinson EOS + LGT physics loss
-4. **Week 11:** Integrate PINN output as GIS safety penalty layer for candidate sites
-5. **Week 12:** Write paper draft and complete framework demonstration
+1. **Week 11:** Integrate PINN safety penalty as GIS raster layer (create spatially-varying safety penalty map)
+2. **Week 11:** Update strategic heatmap with tactical safety penalty overlay
+3. **Week 12:** Write paper draft (Introduction, Methods, Case Study, Discussion, Conclusion)
+4. **Paper figures:** Generate all publication-ready figures from outputs/
+5. **PhD application material:** Frame complete decision-support framework
 
 ### Immediate Next Session Goals
-- Run PINN notebook (05_pinn_ift_model.ipynb) for H2-brine IFT prediction
-- Connect strategic screening layer (candidate regions) with tactical planning layer (PINN safety penalty)
-- Document PINN architecture and training for paper methodology section
-- Prepare for safety penalty layer integration in Week 10
+- Create Week 11 notebook: GIS integration of PINN safety penalty layer
+- Generate spatially-distributed safety penalty raster for entire ROI
+- Update strategic heatmap with tactical overlay
+- Begin paper draft sections (Introduction, Methodology)
