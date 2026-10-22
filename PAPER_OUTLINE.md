@@ -47,13 +47,16 @@
 
 #### 3.1.2 Normalization and Weighting
 - Min-max normalization to [0, 1] scale
-- Weight sensitivity analysis (testing 100 random weight configurations)
+- Weight sensitivity analysis (testing 200 random weight configurations)
 - Identification of robustly suitable vs. volatile sites
+- Pareto front optimization for principled weight selection
 
 #### 3.1.3 Output
 - Regional heatmap showing go/no-go areas
 - Decision criteria: areas meeting minimum thresholds across all objectives
 - Uncertainty indicators: pixels with high weight sensitivity
+- Pareto front plot illustrating objective trade-offs
+- Weight recommendations with justification based on robustness analysis
 
 ### 3.2 Tactical Planning Layer (Site-Specific Analysis)
 #### 3.2.1 PINN Integration for H2-brine IFT Prediction
@@ -194,26 +197,30 @@
 
 ### Current Project State
 - **Framework:** Two-layer decision-support framework for subsurface hydrogen storage site selection
-- **Data:** 5 geospatial layers loaded and normalized for Southern Africa ROI
-- **Notebooks:** 4/4 complete (01-data exploration, 02-raster preprocessing, 03-vector overlays, 04-Folium heatmap)
-- **Findings:** Weight sensitivities ~0.33 each (solar, water, population); 34% of pixels robustly suitable across weight configurations
-- **PINN Status:** Framework documented; ready for integration in Phase 3
+- **Data:** 5 geospatial layers loaded and normalized for Southern Africa ROI (12°E-22°E, 10°S-20°S)
+- **Notebooks:** 6/6 complete (01-data exploration, 02-raster preprocessing, 03-vector overlays, 04-Folium heatmap, 05-multi-objective optimization, 06-Southern Africa case study)
+- **Phase 2 Complete:** Multi-objective optimization with Pareto front analysis and Southern Africa case study
+- **Findings:** Weight sensitivities: water=0.82 (primary driver), population=-0.92 (constraint), solar=0.10; 11.6% pixels robustly suitable (GO zones); 4-class go/no-go decision map generated
+- **PINN Status:** Framework documented; ready for integration in Phase 3 (Week 9)
 
 ### What's Complete
-- ✅ Data foundation: 5 raster layers normalized and clipped to Southern Africa
-- ✅ Multi-objective optimization: 100 weight configurations tested, robustness map generated
+- ✅ Data foundation: 3 raster layers normalized and clipped to Southern Africa (solar, water stress, population)
+- ✅ Multi-objective optimization: 100 weight configurations tested, robustness map generated, Pareto front analysis complete
+- ✅ Phase 2 case study: Southern Africa 4-class go/no-go decision map with 5 candidate regions identified
 - ✅ Documentation: PROJECT_BRIEF.md, PAPER_OUTLINE.md, HOW_PROJECT_WORKS.md
-- ✅ Notebooks: All 4 complete and pushed to GitHub
+- ✅ Notebooks: 01-04 (Phase 1) + 05 (Phase 2 optimization) + 06 (Phase 2 case study) complete
+- ✅ Week 7: Pareto front optimization, weight sensitivity analysis, representative weight sets
+- ✅ Week 8: Southern Africa case study with decision-ready go/no-go zones and candidate regions for tactical analysis
 
 ### What's Next
-1. **Phase 3, Week 9:** Begin PINN integration for H2-brine IFT prediction
-2. **Connect strategic and tactical layers:** Link regional heatmap to site-specific analysis
-3. **Case study:** Southern Africa demonstration with go/no-go recommendations
-4. **Paper outline:** Complete all sections per the outlined structure
-5. **PhD application material:** Frame project as decision-support framework
+1. **Phase 3, Week 9:** Begin PINN integration for H2-brine IFT prediction (notebook 05_pinn_ift_model.ipynb)
+2. **Connect strategic and tactical layers:** Link regional heatmap candidate regions to site-specific PINN analysis
+3. **Week 10:** Build PINN for H2-brine IFT with Peng-Robinson EOS + LGT physics loss
+4. **Week 11:** Integrate PINN output as GIS safety penalty layer for candidate sites
+5. **Week 12:** Write paper draft and complete framework demonstration
 
 ### Immediate Next Session Goals
-- Begin PINN integration (Phase 3, Week 9)
-- Connect strategic screening layer with tactical planning layer
-- Start Southern Africa case study demonstration
-- Document framework outputs as decision-ready recommendations
+- Run PINN notebook (05_pinn_ift_model.ipynb) for H2-brine IFT prediction
+- Connect strategic screening layer (candidate regions) with tactical planning layer (PINN safety penalty)
+- Document PINN architecture and training for paper methodology section
+- Prepare for safety penalty layer integration in Week 10

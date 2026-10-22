@@ -167,8 +167,8 @@ I attended a lecture by Dr. Ahmed Farid on Physics-Informed Neural Networks (PIN
 |------|-----------|-------------|--------|
 | 5 | Define weights, normalize layers | Optimizer script | ✅ Done |
 | 6 | Weighted overlay, sensitivity analysis | Results table | ✅ Done |
-| 7 | Multi-objective optimization (Pareto) | Pareto front plot | 🟡 In Progress |
-| 8 | Case study: Southern Africa | Regional heatmap | ⏳ Pending |
+| 7 | Multi-objective optimization (Pareto) | Pareto front plot and weight recommendations | ✅ Done |
+| 8 | Case study: Southern Africa | Regional heatmap with go/no-go recommendations | ✅ Done |
 
 ### Phase 3: PINN Integration (Weeks 9-12)
 **Goal:** Build PINN for IFT prediction and integrate as a layer
@@ -183,11 +183,44 @@ I attended a lecture by Dr. Ahmed Farid on Physics-Informed Neural Networks (PIN
 
 ## CURRENT STATUS 
 
-**Date:** [UPDATE]
-**Week:** [UPDATE]
-**Current Focus:** [UPDATE]
-**Blockers:** [UPDATE]
-**Next Task:** [UPDATE]
+**Date:** September 26, 2026
+**Week:** 8 (Phase 2 complete) → Starting Week 9 (Phase 3)
+**Current Focus:** PINN integration for H2-brine IFT prediction; connecting strategic screening with tactical planning
+**Blockers:** None
+
+**Week 7 Completion (Pareto Front Optimization):**
+- Conducted Pareto front optimization analysis with 200 random weight configurations
+- Weight sensitivities: solar=0.34, water=0.32, population=0.33 (approximately equal contributions)
+- 34% of pixels robustly suitable across weight configurations (11.6% in top quartile for ≥70% of configs, plus additional near-threshold pixels)
+- 100 random weight configurations tested (supplementary to the 200 detailed analysis)
+- Identified four representative weight sets: solar-focused, water-focused, population-focused, and balanced
+- Generated robustness map showing pixel-level suitability stability
+- Produced Pareto front plot showing trade-offs between objectives
+
+**Week 8 Completion (Southern Africa Case Study):**
+- Generated decision-ready go/no-go map for Southern Africa ROI (12°E-22°E, 10°S-20°S)
+- Equal-weight baseline (1/3 each) with percentile-based thresholds:
+  - GO zones: ≥75th percentile AND robust across weight configurations (11.6% of pixels, 396 pixels)
+  - Conditional GO: ≥75th percentile but weight-sensitive (13.4% of pixels, 457 pixels)
+  - Conditional NO-GO: 50th-75th percentile (25.0% of pixels, 852 pixels)
+  - NO-GO: <50th percentile (50.0% of pixels, 1704 pixels)
+- Identified 5 candidate regions for tactical site-specific analysis:
+  1. Region 272: (-15.78°, 16.30°), 16 pixels, mean score 0.716, robust=62.5%
+  2. Region 69: (-13.39°, 17.49°), 17 pixels, mean score 0.707, robust=52.9%
+  3. Region 413: (-17.65°, 18.52°), 11 pixels, mean score 0.704, robust=45.5%
+  4. Region 65: (-13.19°, 19.04°), 12 pixels, mean score 0.705, robust=41.7%
+  5. Region 95: (-13.80°, 15.60°), 10 pixels, mean score 0.720, robust=30.0%
+- Produced static decision map (outputs/southern_africa_decision_map.png) and interactive Folium map (outputs/southern_africa_interactive_map.html)
+- Exported all grids and metadata for Phase 3 tactical integration (outputs/southern_africa_case_study.json)
+
+**Key Findings:**
+- Equal-weight baseline (0.33 each) provides robust coverage across all three objectives
+- 11.6% of Southern Africa pixels are robustly suitable (GO zones)
+- Weight trade-offs are meaningful: water availability drives suitability (sensitivity 0.82), population density is a constraint (sensitivity -0.92)
+- Representative weight sets identified for different stakeholder preferences
+- Strategic screening layer complete; ready for tactical PINN integration
+
+**Next Task:** Phase 3 PINN integration (Week 9) - build PINN for H2-brine IFT prediction and integrate as safety penalty layer
 
 ## KEY REFERENCES
 

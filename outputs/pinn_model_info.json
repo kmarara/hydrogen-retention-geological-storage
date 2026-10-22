@@ -1,0 +1,9 @@
+{
+  "architecture": "PINN with 4 hidden layers, Tanh activation",
+  "input_dim": 3,
+  "hidden_dim": 64,
+  "output_dim": 1,
+  "n_epochs": 1000,
+  "final_data_loss": 50.851585388183594,
+  "device": "cpu"
+}
