@@ -144,3 +144,16 @@ Official references:
 - Tests/benchmark results: none.
 
 Do not report performance claims until the dataset is source-verified and the split protocol has been executed.
+
+
+## 9. Source-specific reproduction notes from direct PDF reinspection
+
+The uploaded source file `ef6c01887_si_001.pdf` was re-opened and inspected page by page on 2026-11-21.
+
+- TabM SI workflow (pp. 2–3) imports `KFold` and uses `KFold(n_splits=5, shuffle=True, random_state=42)`. The code comment says fold-specific scaling is omitted from the displayed snippet. This is a shuffled row-level five-fold scheme, not a publication-held-out split.
+- TabPFN SI workflow (pp. 4–5) also uses shuffled five-fold `KFold` for internal validation, then fits on all internal data and predicts a separate external dataset. The SI does not identify the external dataset's full source lineage in these code snippets.
+- The TabPFN snippet requests quantiles `[0.025, 0.5, 0.975]` using `output_type="quantiles"`. Treat this as the authors' illustrative API example; confirm compatibility with the pinned installed package/checkpoint before use.
+- The Chow et al. (2018) equation as typeset on PDF p. 6 reads `gamma = a1*T^2 - a2^p + a3*p + a4*T*p + a5`; coefficients on p. 7 are a1=-2.6040e-4, a2=8.950e-2, a3=-0.2553, a4=5.153e-4, a5=96.24. Because this expression incorporates an erratum and has a superscripted pressure term, independently compare the original paper and 2020 erratum before coding or reporting a reproduction.
+- The Hosseini et al. (2022) correlation and coefficients are transcribed on PDF pp. 7–8; see Section 3 above. Verify equation domain and source conditions before use.
+
+**Implication:** The ACS SI provides reproducible starting points, but its displayed internal validation examples do not establish publication-independent generalisation. Our primary LOPO design is an intentionally stricter evaluation. Any numerical comparison with the article must distinguish exact reproduction of its shuffled-fold setup from our stricter source-held-out audit.
