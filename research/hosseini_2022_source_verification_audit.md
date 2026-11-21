@@ -37,7 +37,7 @@ The complete mismatch counts above are based on exact comparison of the two-deci
 1. **Do not use the legacy 64 Hosseini rows in any benchmark or model training.** Retain the original file unchanged for audit history.
 2. A separate 64-row extraction was generated from Tables S1-S4, preserving source table/row coordinates, source units, density difference, IFT uncertainty, electrolyte identity/composition, and method.
 3. The generated extraction has SHA-256 `08d945e6bbf45cc2a239f78fb10e6f60e22fdc2c08660179806188c46c42b0c4`.
-4. Rows are marked `provenance_status=table_extracted` and reviewer status `verified` for transcription against the SI. `benchmark_eligible_primary=false` remains in place pending cross-source duplicate/overlap review, including comparison against the Jiao et al. (2026) 450-row workbook and other compilations.
+4. Rows are marked `provenance_status=table_extracted`, reviewer status `verified`, and `benchmark_eligible_primary=true` as canonical source observations. Each has a row-specific duplicate group ID linking its matching Jiao workbook copy. `benchmark_eligible_primary=false` remains in place pending cross-source duplicate/overlap review, including comparison against the Jiao et al. (2026) 450-row workbook and other compilations.
 5. No claim is made that the 64 rows are 64 independent experiments. They are 64 source-table observations from one study.
 
 ## Remaining work
@@ -50,3 +50,21 @@ The complete mismatch counts above are based on exact comparison of the two-deci
 ## Reproducibility note
 
 The SI source document was supplied by the user in this conversation. It is not copied into this repository. The extracted CSV was generated in the working session and provided separately; the SHA-256 above identifies that exact export.
+
+
+## Cross-publication duplicate-lineage check: Jiao et al. (2026)
+
+The uploaded Jiao et al. (2026) supplementary workbook `ef6c01887_si_002.xlsx`, sheet `Experiment data from literature`, contains the Hosseini reference [2] block at Excel rows 82-145 (workbook observation numbers 80-143). The workbook reference register identifies [2] as Hosseini et al. (2022), DOI 10.1016/j.petrol.2022.110441.
+
+A one-to-one comparison against the 64 observations in Tables S1-S4 found:
+
+- 64/64 exact IFT matches.
+- 64/64 exact pressure matches.
+- 64/64 exact temperature matches.
+- 64/64 matching total salt molality after summing the workbook's NaCl, KCl, CaCl2 and MgCl2 columns (the mixed NaCl/KCl component values are rounded in the workbook).
+- 64/64 method codes equal 0; the workbook legend maps 0 to Pendant Drop.
+- The workbook does not retain the original SI density differences or IFT uncertainty values.
+
+This confirms that Jiao et al. [2] is a re-compilation of the Hosseini observations, not an independent experimental dataset. Retain the Hosseini 2022 table-extracted rows as canonical. Assign one unique duplicate-group ID per paired observation and exclude the Jiao workbook copies from additional independent-observation counts and model training.
+
+The corrected extraction now has SHA-256 `0e1d4715ffd66d01ee7963652621bbfaa6dcb387920cecf69775c3d394adbc1d`. The 64 Hosseini primary-source rows are marked primary-benchmark eligible at the source-observation level. This does not certify the entire 450-row Jiao workbook or complete global overlap review across every literature source; those checks remain open.
