@@ -103,3 +103,6 @@ No gate is considered passed without a repository artefact and verifiable eviden
 - **2026-11-21:** Pretrained TabPFN selected as the primary foundation-model candidate; TabM retained as a fold-trained ensemble comparator; XGBoost/CatBoost and empirical correlations retained as baselines.
 - **2026-11-21:** Publication-held-out validation designated as the primary generalisation test. The ACS SI's shuffled KFold examples are treated as reproducibility references, not as sufficient evidence of publication-independent generalisation.
 - **2026-11-21:** GIS/site ranking and claims of a new PINN are deferred until the benchmark and physics audit justify them.
+
+
+- **2026-11-21:** Added `data/metadata/observation_schema.md` as the canonical row-level schema specification. It defines provenance states, original-versus-normalised units, source coordinates, experiment/publication/fluid-system split groups and benchmark eligibility rules. This is a schema specification only; no legacy rows have been certified or transformed.
