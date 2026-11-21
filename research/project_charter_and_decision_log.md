@@ -88,13 +88,13 @@ No gate is considered passed without a repository artefact and verifiable eviden
 ## Current status (2026-11-21)
 
 - Nine-page ACS Supporting Information PDF directly inspected.
-- ACS XLSX workbook not yet obtained or counted independently.
+- ACS XLSX workbook obtained; 450 observations structurally extracted across nine cited studies. All rows remain provenance-unverified and primary-benchmark-ineligible.
 - Existing 91-row legacy CSV not source-certified.
-- Source overlap audit pending.
+- Source overlap audit in progress; a Hosseini 2022 value/label discrepancy between the workbook and legacy CSV has been documented for primary-source resolution.
 - TabPFN checkpoint and licence not selected.
 - TabPFN, TabM and boosted-tree benchmark not run.
 - Existing PINN requires reformulation/audit before reuse.
-- No new experimental observations have been created.
+- No new experimental measurements have been created; the ACS workbook is a secondary compilation and its rows have not been independently source-certified.
 - No model performance result is claimed.
 
 ## Decision log
@@ -106,3 +106,7 @@ No gate is considered passed without a repository artefact and verifiable eviden
 
 
 - **2026-11-21:** Added `data/metadata/observation_schema.md` as the canonical row-level schema specification. It defines provenance states, original-versus-normalised units, source coordinates, experiment/publication/fluid-system split groups and benchmark eligibility rules. This is a schema specification only; no legacy rows have been certified or transformed.
+
+
+- **2026-11-21:** Acquired and checksummed the ACS Jiao et al. (2026) XLSX. Extracted 450 rows across nine cited studies; 266 Pendant Drop and 184 Sessile Drop method codes. All records remain provenance-unknown and excluded from the primary benchmark until verified against original sources.
+- **2026-11-21:** Documented a material Hosseini et al. (2022) discrepancy: at 2.76 MPa and 298.15 K the workbook distinguishes pure water (73.57 mN/m) from mixed brine (74.97 mN/m), whereas the legacy CSV labels 74.97 mN/m as pure water and repeats it in a brine block. No merge or correction is authorised pending primary-source verification.
