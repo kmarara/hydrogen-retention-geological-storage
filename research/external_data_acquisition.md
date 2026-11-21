@@ -69,3 +69,26 @@ API documentation:
 - OpenAlex API: https://help.openalex.org/api/
 - Figshare API v2 (for repository-hosted files where applicable): https://docs.figshare.com/v2/
 
+
+
+## Supporting-information PDF obtained (2026-11-21)
+
+The nine-page ACS Supporting Information PDF was uploaded and inspected. It contains:
+- TabM hyperparameter search spaces and three scenario-specific configurations (pure water, brine, combined system; PDF p. 1).
+- Illustrative TabM/PyTorch/PLE workflow and ensemble-aware loss snippets (pp. 2–3).
+- Illustrative TabPFN regression workflow with 2.5%, 50%, and 97.5% quantiles, internal shuffled five-fold validation, external prediction, permutation-SHAP and PDP snippets (pp. 3–5).
+- Chow et al. (2018) H2O-H2 correlation and erratum-corrected coefficients, plus Hosseini et al. (2022) H2-brine correlation and coefficients (pp. 6–8).
+
+The PDF is **methods and correlation supplementary information, not the 450-row measurement workbook**. It does not expose the full data table, full executable scripts, complete preprocessing or training loops. The XLSX is still required.
+
+The Hosseini correlation printed in the PDF is:
+`gamma = A*m + B`, `A = a0 + a1*p + a2*T`, `B = b11 + b21*p + b12*T + b22*p*T`.
+Parameters: a0=-0.47876, a1=-0.01004, a2=0.00593, b11=135.41479, b21=-0.38368, b12=-0.20520, b22=0.00084. Units in the PDF: gamma mN/m, m mol/kg, T K, p MPa. Treat correlation outputs as calculated baselines, never as experimental measurements.
+
+The Chow equation's typesetting/exponent placement must be checked against the original paper and 2020 erratum before implementation; do not transcribe from OCR alone.
+
+## Model implementation decision
+
+A dedicated protocol is maintained in `research/pretrained_tabular_model_benchmark.md`. TabPFN is the pretrained foundation-model candidate. TabM is a parameter-efficient ensemble architecture trained on each training fold, not a pretrained foundation model. Include conventional boosted-tree and empirical-correlation baselines. Pin exact package/checkpoint versions and inspect model-weight licences separately from code licences before selecting TabPFN weights.
+
+Current status: SI PDF inspected; XLSX not obtained; no model trained; no performance claims made.
