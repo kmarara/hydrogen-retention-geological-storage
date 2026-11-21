@@ -45,14 +45,26 @@ For the binary block, the paper reports an expanded combined relative IFT uncert
 
 For the ternary block, the paper also reports three repeated measurements at each state point, average relative standard deviation 0.2%, each below 0.5%, and expanded combined relative IFT uncertainty of 1.7%. The paper explains that uncertainty includes phase-composition contributions to density difference. Do not mislabel the 1.7% expanded uncertainty as a standard deviation.
 
-## 5. Benchmark disposition
+## 5. Canonical extraction completed (stage 1)
 
-- **Numerical status:** 79/79 central IFT values matched to primary tables at the workbook's displayed precision.
-- **Provenance:** classify as `table_extracted` once canonical row-level records carry the precise source table and row coordinates.
+A 79-row source-level canonical tranche has been created at `data/processed/canonical/chow_mirchi_2022_ift_observations_stage1.csv` (shared file with the 15 Mirchi rows) and incorporated into the combined stage-1 dataset `data/processed/canonical/ift_source_verified_stage1_158_observations.csv`.
+
+- 43 binary H2-water rows are mapped to corrected Table 4 records 1–43.
+- 36 ternary H2-CO2-water rows are mapped to Table 6 records 1–36.
+- Source pressure, temperature and IFT central values are retained; source IFT expanded uncertainty is recorded as (U_c(\gamma)=0.017\gamma) at 95% confidence.
+- Ternary feed composition is stored as 0.70 H2 + 0.30 CO2; state-dependent non-aqueous-phase (y_{CO2}) is stored separately in `gas_phase_y_CO2_non_aqueous`.
+- The Jiao workbook's mislabeled ternary composition field is corrected in the derivative; the original workbook remains unchanged.
+- All 79 rows have exact table-record coordinates, unique IDs, grouping IDs, and source-level eligibility flags.
+- Combined stage-1 snapshot: 158 rows across three studies; SHA-256 `94fde4ebfcc76ab7a12437079467dcc0e24f2cc98a5966f6802238155a25d89a`.
+
+## 6. Benchmark disposition
+
+- **Numerical status:** 79/79 central IFT values matched to primary tables at the workbook's displayed precision and canonicalized with source-table coordinates.
+- **Provenance:** `table_extracted`; canonical row-level records now carry primary table and record coordinates.
 - **Method:** pendant drop, verified.
 - **Uncertainty:** source-reported expanded uncertainty, 95% confidence, 1.7% of IFT for both blocks.
 - **Gas metadata:** workbook feature mapping defect for ternary block; repair in a documented derivative, never by editing the original workbook.
-- **Eligibility:** source-verified candidate data. Do not globally release into benchmark training until canonical-schema extraction, exact source coordinates, checksum, duplicate/overlap review and split-group assignment are complete.
+- **Eligibility:** source-level candidate data are canonicalized and checksummed. Do not train until global duplicate/overlap review and frozen split manifests are complete.
 
 ## 6. Reproducibility references
 
