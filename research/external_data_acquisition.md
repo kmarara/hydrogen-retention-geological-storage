@@ -49,3 +49,23 @@ Crossref and OpenAlex can automate bibliographic discovery and DOI metadata. The
 ## Current status
 
 The publisher record confirms that the 450-measurement XLSX exists. The workbook itself has **not yet been downloaded or inspected in this repository**. Do not describe its columns or contents beyond what the article record states until the original file is obtained.
+
+## Automated DOI metadata discovery
+
+Use the metadata script to retrieve bibliographic records from Crossref and OpenAlex:
+
+```bash
+python scripts/discover_publication_metadata.py \
+  10.1016/j.petrol.2022.110441 \
+  10.1016/j.ijhydene.2026.154442 \
+  10.1021/acs.energyfuels.6c01887 \
+  --out data/metadata/publication_metadata.json
+```
+
+Optionally provide `--mailto you@example.org` for Crossref's polite pool. The script stores article metadata and OA-location metadata only. It does not retrieve IFT observations, guarantee supplementary-file access, or establish permission to reuse a dataset. Crossref and OpenAlex are discovery services, not experimental-data APIs.
+
+API documentation:
+- Crossref REST API: https://www.crossref.org/documentation/retrieve-metadata/rest-api/
+- OpenAlex API: https://help.openalex.org/api/
+- Figshare API v2 (for repository-hosted files where applicable): https://docs.figshare.com/v2/
+
