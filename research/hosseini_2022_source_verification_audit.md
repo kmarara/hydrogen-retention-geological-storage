@@ -36,13 +36,13 @@ The complete mismatch counts above are based on exact comparison of the two-deci
 
 1. **Do not use the legacy 64 Hosseini rows in any benchmark or model training.** Retain the original file unchanged for audit history.
 2. A separate 64-row extraction was generated from Tables S1-S4, preserving source table/row coordinates, source units, density difference, IFT uncertainty, electrolyte identity/composition, and method.
-3. The generated extraction has SHA-256 `08d945e6bbf45cc2a239f78fb10e6f60e22fdc2c08660179806188c46c42b0c4`.
+3. The generated extraction has SHA-256 `0e1d4715ffd66d01ee7963652621bbfaa6dcb387920cecf69775c3d394adbc1d`.
 4. Rows are marked `provenance_status=table_extracted`, reviewer status `verified`, and `benchmark_eligible_primary=true` as canonical source observations. Each has a row-specific duplicate group ID linking its matching Jiao workbook copy. `benchmark_eligible_primary=false` remains in place pending cross-source duplicate/overlap review, including comparison against the Jiao et al. (2026) 450-row workbook and other compilations.
 5. No claim is made that the 64 rows are 64 independent experiments. They are 64 source-table observations from one study.
 
 ## Remaining work
 
-- Compare all 64 observations against the Hosseini block in the Jiao et al. (2026) workbook, including values, uncertainty availability, chemistry and any duplicated representation.
+- Global overlap review across the remaining literature sources is still required; the Hosseini/Jiao duplicate pair is resolved and recorded.
 - Resolve source lineage and independence before setting primary benchmark eligibility.
 - Review the original article methods for the exact meaning of reported uncertainty and confirm any details not defined in the SI.
 - Keep the old CSV unchanged; any later migration should preserve an explicit link to this audit.
