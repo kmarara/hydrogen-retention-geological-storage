@@ -27,16 +27,19 @@
 - Rows with unresolved or conflicting numerical provenance: **240** (Isfehani 72 + Al-Mukainah 6 + Janjua 135 + Daraii 27).
 - The 36 Higgs matches are against a preprint, not yet the final published version.
 - The 16 Esfandyari matches are against the official corrigendum replacement table; method remains unresolved.
-- Chow and Mirchi have strong primary-table numerical matches, but still require canonical schema extraction, uncertainty/metadata capture, and cross-study overlap checks.
+- Chow and Mirchi have been canonicalized: 79 Chow rows (43 binary Table 4 + 36 ternary Table 6) and 15 Mirchi Table 6 rows, including source uncertainty and corrected gas-composition semantics. Global overlap/duplicate review remains open.
 - These figures describe audit status, not a count of globally eligible independent measurements.
 
 ## 3. Current conservative benchmark eligibility
 
-The canonical Hosseini SI extraction contains 64 rows with `table_extracted` provenance, exact primary-SI source coordinates and verified status. The source register records these as primary-eligible at source-row level, subject to the global overlap/snapshot release gate.
+The source-verified stage-1 canonical tranche now contains **158 rows across three independent publications**:
+- Hosseini et al. (2022): 64 original SI rows.
+- Chow et al. (2018): 43 binary H2-water Table 4 rows + 36 ternary H2-CO2-water Table 6 rows.
+- Mirchi et al. (2022): 15 H2-CH4/brine Table 6 rows.
 
-Mirchi's 15 table values are verified, but its uncertainty fields and canonical extraction still need to be populated before frozen-dataset release.
+All 158 have unique observation IDs, source locations, IFT values, uncertainty records, provenance labels and grouping identifiers. The combined 42-column file is `data/processed/canonical/ift_source_verified_stage1_158_observations.csv`, SHA-256 `94fde4ebfcc76ab7a12437079467dcc0e24f2cc98a5966f6802238155a25d89a`.
 
-Chow's 79 values are matched, but its source feature semantics must be corrected in the canonical derivative and source coordinates captured. Esfandyari's 16 corrected values are numerically verified but the IFT drop configuration is unresolved. Higgs's 36 values remain quarantined until final-version reconciliation.
+This is a source-verified candidate tranche, not a globally released benchmark. The global duplicate/overlap audit and split-manifest gate remain open. Esfandyari's 16 corrected values are numerically verified but the IFT drop configuration is unresolved. Higgs's 36 values remain quarantined until final-version reconciliation.
 
 **No 450-row Jiao workbook export is approved as the benchmark dataset.** The original workbook remains immutable audit evidence.
 
@@ -59,7 +62,7 @@ Before model training:
 2. Complete final-version source reconciliation for Higgs.
 3. Obtain full numerical sources for Isfehani and Janjua.
 4. Request exact Al-Mukainah point values or original data file because the workbook endpoints conflict with article text.
-5. Extract Chow and Mirchi into the canonical schema, preserving all source uncertainty and chemistry metadata.
+5. Continue canonicalizing Esfandyari only if the IFT method can be resolved; otherwise retain a method-unknown sensitivity candidate.
 6. Run cross-source duplicate/overlap review, particularly for apparatus-validation points and reused literature data.
 
-**Decision:** continue source acquisition and canonical extraction. Do not start model training yet.
+**Decision:** stage-1 canonical extraction is complete for 158 source-level candidate observations. Proceed to cross-publication overlap/duplicate review, schema/conversion tests and a documented release decision. Do not start model training yet.
