@@ -41,3 +41,18 @@ Do not claim these questions are novel until the complete Jiao et al. (2026) met
 The ACS article abstract reports a 450-measurement curated experimental database, TabM/TabPFN modelling, external evaluation on H2–pure-water and H2–NaCl systems, and quantile-regression 95% prediction intervals. Its Supporting Information is described as containing the complete XLSX dataset, code/implementation details and empirical correlations. These are abstract-level claims only until the full supporting files and source records are inspected. This study substantially narrows the novelty space: a new tabular model, generic external validation, or calibrated intervals alone cannot be presented as our primary contribution.
 
 Source: https://doi.org/10.1021/acs.energyfuels.6c01887
+
+
+## Inspection update: ACS Supporting Information PDF (uploaded 2026-11-21)
+
+The nine-page SI PDF is now directly inspected (not merely publisher-metadata-confirmed). It provides:
+- TabM hyperparameter search space and three reported optimal configurations for pure-water, brine and combined systems (p. 1).
+- TabM architecture/PLE and ensemble-aware loss examples (pp. 2–3).
+- TabPFN regression example with quantiles 0.025, 0.5, 0.975; internal shuffled five-fold validation; separate external prediction; permutation-SHAP and PDP examples (pp. 3–5).
+- Chow et al. (2018) H2O-H2 and Hosseini et al. (2022) H2-brine empirical correlation formulations/coefficients (pp. 6–8).
+
+The code snippets explicitly omit standard data I/O, scaling pipelines, repetitive training loops and other details. The SI PDF is not the full 450-row XLSX measurement dataset; that workbook remains outstanding. Accordingly, we can now reproduce selected reported model configurations and empirical formulae, but cannot independently reconstruct or audit the 450 observations from this PDF alone.
+
+Terminology correction for our benchmark: TabPFN is the pretrained foundation-model candidate. TabM is an efficient neural ensemble architecture that is trained on the benchmark's training folds; it is not itself a pretrained foundation model. This makes a useful comparison between pretrained tabular priors, fold-trained deep ensembles and conventional tree baselines, but the novelty must remain the independent source-aware audit and evaluation.
+
+The Chow correlation equation's typography/exponent placement must be verified against the original publication and 2020 erratum before implementation. The Hosseini correlation is transcribed in `research/pretrained_tabular_model_benchmark.md`. Correlation-generated predictions are model outputs, not new experimental measurements.
