@@ -1,0 +1,38 @@
+{
+  "roi_bounds": [
+    12.0,
+    -20.0,
+    22.0,
+    -10.0
+  ],
+  "grid_shape": [
+    100,
+    100
+  ],
+  "valid_pixels": 3409,
+  "weights": {
+    "strategic": 0.7,
+    "safety": 0.3
+  },
+  "thresholds": {
+    "go": 0.65,
+    "conditional_go": 0.55,
+    "conditional_no_go": 0.35,
+    "safety_min": 0.5
+  },
+  "ift_range_mN_m": [
+    57.48234558105469,
+    65.39849853515625
+  ],
+  "integrated_range": [
+    0.034909981248962524,
+    0.9636094159064443
+  ],
+  "decision_counts": {
+    "NO-GO": 993,
+    "Cond NO-GO": 1739,
+    "Cond GO": 527,
+    "GO": 150
+  },
+  "model": "PINN v3 trained on experimental H2-brine IFT data (91 points)"
+}
