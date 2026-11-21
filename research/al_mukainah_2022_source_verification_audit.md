@@ -60,3 +60,26 @@ Keep the original Jiao workbook and its checksum unchanged. Any eventual correct
 5. reviewer decision and duplicate lineage.
 
 The next decisive step is to obtain the authors' underlying numerical data or supplementary table for Figure 4. Until then, do not train on these six rows.
+
+
+## Figure 4 re-examination and digitisation decision (2026-11-21)
+
+The author-uploaded full-text article record was reopened. Section 3.2 states that the experimental H2/brine was 10 wt% NaCl at 50 °C and pressures 14.7–1000 psi. It explicitly gives the endpoint IFT values as 63.68 mN/m at 14.7 psi and 51.29 mN/m at 1000 psi. Figure 4's caption states that individual-measurement uncertainty is represented by error bars of ±1 mN/m. The figure metadata page is accessible and confirms the same caption, but the actual image download endpoint returned a cache-miss/access error in this session; therefore no pixel-based digitisation was performed and no intermediate values were estimated from an inaccessible image.
+
+### Endpoint comparison
+
+- Low-pressure workbook value: 64.46 mN/m; source text: 63.68 mN/m; difference: +0.78 mN/m.
+- High-pressure workbook value: 52.02 mN/m; source text: 51.29 mN/m; difference: +0.73 mN/m.
+
+Both absolute differences are smaller than the ±1 mN/m error-bar magnitude stated in the Figure 4 caption. This means the endpoint differences are within the reported uncertainty scale, but it does **not** establish that the workbook central values are the original central measurements. Nor does it establish that the four intermediate workbook values are correct. Error bars are not a licence to substitute values or waive provenance.
+
+### Decision
+
+1. Correct the six IFT method labels from Sessile Drop to Pendant Drop in any canonical derivative; preserve raw Jiao values unchanged.
+2. Preserve 10 wt% NaCl as the source concentration basis. Treat the workbook's 1.91 mol/kg as a derived approximation only.
+3. Retain all six numerical records as quarantined / not primary-benchmark eligible. The primary article gives only the two endpoint values in text; four intermediate values remain graph-only, and the graph raster could not be retrieved for documented digitisation.
+4. A narrow author request remains justified, now asking for the six exact IFT central values or underlying Figure 4 data, and confirmation of what the ±1 mN/m bars represent (instrument uncertainty, repeatability, or another measure).
+
+### Source access record
+
+The ResearchGate full-text page exposed the full article text and Figure 4 caption. The figure page was opened; its image download endpoint returned a cache miss, and the direct full-text PDF download endpoint was not retrievable by the available web/container route. No figure pixels were available to calibrate or digitise. Relevant web evidence: article full text, Section 3.2 and Figure 4 caption; figure metadata/caption page.
