@@ -64,3 +64,20 @@ Do not exclude the values merely because the original paper required a corrigend
 ## Next evidence needed
 
 Obtain the complete original article methods section or written author clarification to resolve whether the IFT measurement was pendant-drop or another drop-shape configuration. Also inspect the original supplementary file for density data, uncertainty and exact source coordinates. The numerical values themselves are already verified against the corrigendum and should not be re-extracted from the superseded figure.
+
+## Additional corrected formation-brine block extracted (2026-11-21)
+
+The official corrigendum's corrected Table 2 contains a second 4-pressure × 4-temperature block for H2/formation brine, separate from the 16 H2/distilled-water observations already represented in the Jiao workbook. I have now transcribed these **16 additional central IFT values** into `data/processed/canonical/esfandyari_2022_corrected_formation_brine_16_observations.csv` (42 columns; one row per Table 2 condition).
+
+| Pressure (bar) | 20 °C | 40 °C | 60 °C | 80 °C |
+|---:|---:|---:|---:|---:|
+| 10 | 63.6 | 62.6 | 60.3 | 58.5 |
+| 40 | 63.1 | 62.2 | 59.8 | 58.3 |
+| 70 | 62.9 | 62.0 | 59.5 | 57.6 |
+| 100 | 62.8 | 61.3 | 59.1 | 57.2 |
+
+All values are directly transcribed from the corrected Table 2. Original pressure (bar), temperature (°C), and IFT (mN/m) are preserved; normalized pressure (MPa) and temperature (K) are stored separately. The corrigendum states that both distilled-water and formation-brine experiments were repeated after surfactant contamination affected the original Figure 6, so the corrected table supersedes the original figure.
+
+**Important limitations:** the corrigendum does not provide uncertainty alongside these 16 values, nor does its corrected table specify the IFT-specific drop configuration. A later literature synthesis describes the formation brine as containing NaCl, KCl, CaCl2 and MgCl2, but the exact recipe and component concentrations have not been verified from the original article/SI in this pass. Accordingly, the new rows are marked `table_extracted`, `reviewer_status=needs_clarification`, and `benchmark_eligible_primary=false`. They are source-traceable corrected measurements, but must not enter the primary benchmark until brine composition and method metadata are resolved or explicitly accepted under a documented unknown-category policy.
+
+The 16 new formation-brine observations are **not** present in Jiao's 16-row Esfandyari group, which contains the distilled-water block only. They therefore expand source coverage rather than duplicate those Jiao rows. Source: official corrigendum DOI 10.1016/j.est.2022.106162, corrected Table 2; contextual brine-ion description: later literature synthesis (see project source register before final citation freeze).
