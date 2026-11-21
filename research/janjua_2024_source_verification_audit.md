@@ -100,3 +100,24 @@ The 2025 article's stated dataset size is approximate. No row-level Janjua mappi
 **New retrieval lead:** obtain and inspect the 2025 supplementary DOCX (PMC attachment 41598_2025_2304_MOESM1_ESM.docx) and determine whether it contains row-level experimental data, source attribution, or only model/configuration information. If row-level values are present, compare them with the 135 Jiao Janjua rows as a secondary cross-check while preserving Janjua's original paper as the authority.
 
 **Decision unchanged:** no Janjua IFT value is newly verified by this discovery. All 135 Jiao rows remain quarantined pending exact primary-source numerical verification and resolution of method configuration and concentration-conversion provenance.
+
+
+## Inspection of user-provided Ibrahim (2025) supplementary DOCX (2026-11-21)
+
+The user supplied the supplementary DOCX for Ahmed Farid Ibrahim's 2025 *Scientific Reports* article. The file was inspected as a Word document, including its embedded 102-page table layout. Its first table is headed “Data Set used in the study” and contains 498 data records across literature sources. Janjua et al. (2024), DOI 10.1016/j.est.2024.112510, is explicitly attributed in 180 records (table rows 81–260, counting the header as row 1). The Janjua block therefore contains the complete 180-row nominal design represented in this secondary compilation, rather than only the 135-row subset in the Jiao 2026 workbook.
+
+The 180 rows report:
+- Pure H2 (CO2=0, CH4=0, H2=100%);
+- temperatures 77, 122 and 158 °F (nominally 25, 50 and 70 °C);
+- pressures 14.5, 725, 1450, 2175 and 2900 psi (nominally 0.1, 5, 10, 15 and 20 MPa);
+- nine explicitly distinguishable table labels: deionized water, seawater, 1M/3M NaCl, 1M/3M KCl, and nominally 1M MgCl2, 1M CaCl2 and 1M Na2SO4.
+
+**Critical label ambiguity:** MgCl2, CaCl2 and Na2SO4 each appear as two distinct 15-row condition blocks at each temperature series, but both blocks are labelled “1M-[salt]” in the DOCX. These appear structurally consistent with two concentration levels in the original 1 M/3 M design, but the second block must NOT be relabelled 3 M without confirmation from Janjua's original source. Retain the printed label and add a separate ambiguity flag. This is a concrete data-quality issue in the secondary compilation.
+
+The DOCX table's header labels temperature as °F and pressure as psi. The reported 77/122/158 °F values correspond to 25/50/70 °C after conversion; the reported 14.5/725/1450/2175/2900 psi correspond approximately to 0.1/5/10/15/20 MPa. These are secondary-compilation values and rounded unit representations, not proof of exact original values or measurement precision.
+
+A 180-row extraction was generated at `data`-working-copy level for review as `/mnt/data/janjua_2024_secondary_compilation_180_rows.csv`. SHA-256: `4caa78d873ba364324c84fffb193a227062d9c9d887c5c13b8251733209010a0`. The supplied DOCX SHA-256 is `fe596ef7db579fa51a2095c5e53b862c158f5a4cb3b16323725d628b6df5aa03`. The extraction preserves the table row index and every printed field; all 180 extracted rows are distinct.
+
+**Evidence status remains secondary_only.** This supplementary dataset is a later ML author's compilation, not Janjua's original primary data. It can guide source reconciliation and reveal missing design blocks, but cannot independently certify the experimental values, exact concentration labels for the ambiguous blocks, measurement configuration, uncertainty, or molarity-to-molality conversions. The 135 Jiao rows must still be compared row-by-row with the 180 Ibrahim supplementary rows, and both must ultimately be checked against Janjua's original tables or author-provided data. No row is promoted to primary benchmark eligibility on the basis of this DOCX alone.
+
+The uploaded DOCX is 102 pages in rendered layout; the key Janjua entries span its Table S1 rows 81–260 (approximately pages 17–53; page layout is dense and repeated table continuation). Visual/table parsing should be checked against the Word table structure before any row-level transcription is published.
