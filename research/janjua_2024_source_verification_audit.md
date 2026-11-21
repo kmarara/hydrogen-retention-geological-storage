@@ -78,3 +78,12 @@ Obtain the full primary article PDF and any supplementary/raw data files, then:
 6. check for overlap/reuse in later benchmark datasets.
 
 Until those steps are complete, retain the raw Jiao workbook unchanged and quarantine the 135 observations from model training.
+
+
+## Additional full-text and independent-summary checks (2026-11-21)
+
+A publisher-indexed full-text search result exposes additional article text, including the stated rationale and experimental scope, but opening the publisher full-text page returns HTTP 403. The KFUPM institutional record independently confirms the five pressure levels, three temperatures, solution families, 1/3 M preparation basis, and DSA-100 instrument. It does not identify the IFT drop configuration or expose the numerical result tables.
+
+A later 2025 review reports broad IFT ranges by salt type for Janjua et al. (NaCl 66–76, KCl 63–77, MgCl2 66–87, CaCl2 67–87, Na2SO4 70–85 mN/m). These are secondary aggregate ranges, not point-level values with pressure, temperature and concentration coordinates; they cannot validate any of the 135 Jiao rows or be ingested as experimental observations. The 135-row Jiao subset still represents only DI water and four salts at two concentrations each, not the full 180-condition article design.
+
+**Decision unchanged:** all 135 Jiao rows remain quarantined. The DSA-100 instrument is confirmed, but pendant versus sessile configuration remains unknown. Original 1/3 M must be retained as molarity; workbook molality values remain derived and undocumented. The next useful route is author-supplied point data or the publisher's complete tables/supplement, followed by exact row matching and independent reconstruction of any molarity-to-molality conversion from solution density and temperature.
