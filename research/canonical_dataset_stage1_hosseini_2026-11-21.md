@@ -8,7 +8,7 @@
 
 A 64-row canonical derivative was reconstructed from the verified primary-SI extraction preserved in the project file library.
 
-- Output: `hosseini_2022_ift_observations.csv` (generated working artifact; repository CSV commit is still pending)
+- Output: `data/processed/canonical/hosseini_2022_ift_observations.csv` (committed)
 - Rows: 64
 - Columns: 38
 - Provenance: all 64 rows `table_extracted`
@@ -16,7 +16,7 @@ A 64-row canonical derivative was reconstructed from the verified primary-SI ext
 - Source-level eligibility flag: all 64 true, as in the verified extraction; this is **not** a declaration that the multi-study benchmark is released.
 - Primary SI SHA-256: `16b6ae258043a370db31e85d5deaf5062bfbd873d3ed152762def30083b8e2d2`
 - Verified source extraction SHA-256 (34 columns): `0e1d4715ffd66d01ee7963652621bbfaa6dcb387920cecf69775c3d394adbc1d`
-- Canonical derivative SHA-256 (38 columns): `16ee53f4cb5024d2926578bc08ffe53d4e06b687657cc298eb4416f12653bc1a`
+- Canonical derivative SHA-256 (38 columns): `e4509b99ba6c578c578b159f6abfb21f8f22b893b960dd62ee5c149970a38a99`
 
 The derivative adds four explicit grouping fields:
 - `publication_group_id`: DOI:10.1016/j.petrol.2022.110441
@@ -52,5 +52,7 @@ This is the first source-specific canonical data tranche, **not** the frozen mul
 2. reconcile possible cross-paper reuse/overlap, including apparatus-validation data;
 3. validate all grouping fields and conversions across the combined table;
 4. freeze the complete dataset snapshot and publication-held-out split manifests.
+
+The canonical Hosseini CSV is committed to the working branch. The combined 158-row stage-1 snapshot now includes this source plus Chow and Mirchi; see `data/processed/canonical/ift_source_verified_stage1_158_observations.csv`. Combined snapshot SHA-256: `94fde4ebfcc76ab7a12437079467dcc0e24f2cc98a5966f6802238155a25d89a`.
 
 The original Jiao supplementary workbook remains immutable audit evidence and is not substituted for primary sources.
