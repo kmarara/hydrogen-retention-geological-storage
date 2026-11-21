@@ -8,7 +8,7 @@
 
 A 64-row canonical derivative was reconstructed from the verified primary-SI extraction preserved in the project file library.
 
-- Output: `data/processed/canonical/hosseini_2022_ift_observations.csv`
+- Output: `hosseini_2022_ift_observations.csv` (generated working artifact; repository CSV commit is still pending)
 - Rows: 64
 - Columns: 38
 - Provenance: all 64 rows `table_extracted`
