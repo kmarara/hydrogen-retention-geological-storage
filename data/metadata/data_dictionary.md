@@ -44,7 +44,9 @@ Every observation in a future processed dataset should have:
 
 ## Current source-level status
 
-See `data/metadata/source_register.csv`. Bibliographic metadata and broad experimental ranges have been confirmed from publisher/institutional records. Individual repository values have not yet been verified against source tables or supplementary data.
+See `data/metadata/source_register.csv` and `research/consolidated_provenance_matrix_2026-11-21.md`. A source-verified stage-1 tranche now contains 158 canonical candidate observations: 64 Hosseini primary-SI rows, 79 Chow primary-table rows, and 15 Mirchi primary-table rows. The combined CSV has 42 columns and SHA-256 `94fde4ebfcc76ab7a12437079467dcc0e24f2cc98a5966f6802238155a25d89a`.
+
+This tranche is not yet the frozen benchmark. Global overlap/duplicate review and final release gates remain open. The 450-row Jiao workbook and legacy 91-row CSV are not approved as benchmark datasets.
 
 ## Non-destructive legacy CSV audit
 
