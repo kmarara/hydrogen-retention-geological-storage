@@ -121,3 +121,33 @@ A 180-row extraction was generated at `data`-working-copy level for review as `/
 **Evidence status remains secondary_only.** This supplementary dataset is a later ML author's compilation, not Janjua's original primary data. It can guide source reconciliation and reveal missing design blocks, but cannot independently certify the experimental values, exact concentration labels for the ambiguous blocks, measurement configuration, uncertainty, or molarity-to-molality conversions. The 135 Jiao rows must still be compared row-by-row with the 180 Ibrahim supplementary rows, and both must ultimately be checked against Janjua's original tables or author-provided data. No row is promoted to primary benchmark eligibility on the basis of this DOCX alone.
 
 The uploaded DOCX is 102 pages in rendered layout; the key Janjua entries span its Table S1 rows 81–260 (approximately pages 17–53; page layout is dense and repeated table continuation). Visual/table parsing should be checked against the Word table structure before any row-level transcription is published.
+
+
+## 2026-11-21 follow-up: Ibrahim (2025) secondary-compilation methodology review
+
+The full text of Ibrahim (2025), DOI 10.1038/s41598-025-02304-4, was reviewed through the PubMed Central version (PMCID PMC12125213).
+
+### What the paper explicitly reports
+- The author compiled approximately 500 IFT data points from multiple literature sources, including Janjua et al. (2024).
+- The QA/QC procedure is described as unit-consistency checks, outlier removal, duplicate filtering, visual inspection and statistical diagnostics.
+- The manuscript does not provide, in the inspected methodological text, a row-level change log identifying which Janjua records were removed, retained, altered or relabelled.
+- The model-development description uses random subsampling cross-validation with random train/test ratios, a 100-point validation set described as unseen, and tenfold cross-validation. The inspected text does not state that the 100-point validation set is held out by publication/source study.
+- The supplementary information is linked by the article, and the data availability statement says data are provided in the manuscript or supplementary information.
+
+### Consequence for Janjua reconciliation
+The Ibrahim 180-row block is a valuable secondary transcription/comparison source, but it cannot independently establish the original Janjua measurements or the identity of ambiguous concentration blocks. In particular:
+- Do not infer that two blocks both printed as 1M are actually 1M and 3M.
+- Do not infer that Ibrahim's outlier/duplicate filtering preserved every original Janjua observation.
+- Do not use Ibrahim's model validation results as evidence of publication-independent generalisation.
+- Retain the 180 rows as secondary-only and benchmark-ineligible until each row is traced to Janjua's original article/SI or confirmed by the authors.
+
+### Retrieval status
+A targeted search located Janjua's publisher article record and KFUPM institutional record, both confirming the 5-pressure × 3-temperature design and the listed fluid systems. No publicly indexed original pointwise supplementary file was located in this search. The publisher article page was inaccessible to direct inspection during this pass; absence of a located SI link is not proof that no SI exists.
+
+### Next evidence required
+1. Original Janjua pointwise data (publisher SI, author-provided workbook, or explicit author confirmation).
+2. Jiao 2026 supplementary workbook to compare its 135 Janjua rows against the 180 Ibrahim rows.
+3. Clarification of the duplicated 1M labels in Ibrahim's MgCl2, CaCl2 and Na2SO4 blocks.
+4. A row-level reconciliation log documenting exact matches, conversion-only matches, mismatches, omitted conditions and unresolved cases.
+
+**Status remains unchanged:** all Janjua records in both secondary compilations remain excluded from the primary benchmark pending primary-source verification.
