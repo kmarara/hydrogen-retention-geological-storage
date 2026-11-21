@@ -43,7 +43,15 @@ This is a source-verified candidate tranche, not a globally released benchmark. 
 
 **No 450-row Jiao workbook export is approved as the benchmark dataset.** The original workbook remains immutable audit evidence.
 
-## 4. Dataset release gates
+## 4. Stage-1 cross-publication overlap screen
+
+The 158-row source-verified tranche was screened using `scripts/audit_cross_study_overlap.py`. With matching declared electrolyte/gas composition required, the strict screen found:
+- exact cross-publication matches: **0**;
+- near-match candidates: **0** at thresholds ΔP ≤ 0.02 MPa, ΔT ≤ 0.5 K, and ΔIFT ≤ 0.10 mN/m.
+
+See `research/stage1_cross_publication_overlap_audit_2026-11-21.md`. This does not prove experimental independence: manual source-lineage review remains open for unreported data reuse, altered rounding, and shared campaigns. The 64 Hosseini Jiao copies are excluded; Mirchi's apparatus-validation comparisons are not counted as new Table 6 observations; Chow's erratum is not a new experiment.
+
+## 5. Dataset release gates
 
 Before model training:
 1. Build canonical long-form observations from original primary sources, not by blindly copying the Jiao workbook.
@@ -56,7 +64,7 @@ Before model training:
 8. Freeze and checksum the first eligible dataset snapshot and split manifests.
 9. Only then train TabPFN, TabM, boosted-tree baselines and empirical correlations on matched folds.
 
-## 5. Immediate next actions
+## 6. Immediate next actions
 
 1. Obtain Daraii's complete primary tables or author-supplied numerical data; resolve 293 K versus 25 °C, source coordinates, uncertainty, concentration basis and drop configuration.
 2. Complete final-version source reconciliation for Higgs.
@@ -65,4 +73,4 @@ Before model training:
 5. Continue canonicalizing Esfandyari only if the IFT method can be resolved; otherwise retain a method-unknown sensitivity candidate.
 6. Run cross-source duplicate/overlap review, particularly for apparatus-validation points and reused literature data.
 
-**Decision:** stage-1 canonical extraction is complete for 158 source-level candidate observations. Proceed to cross-publication overlap/duplicate review, schema/conversion tests and a documented release decision. Do not start model training yet.
+**Decision:** stage-1 canonical extraction is complete for 158 source-level candidate observations. The first automated overlap screen found no exact or near matches, but manual lineage review and schema/conversion tests remain. Do not start model training yet.
