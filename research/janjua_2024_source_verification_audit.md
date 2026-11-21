@@ -87,3 +87,16 @@ A publisher-indexed full-text search result exposes additional article text, inc
 A later 2025 review reports broad IFT ranges by salt type for Janjua et al. (NaCl 66–76, KCl 63–77, MgCl2 66–87, CaCl2 67–87, Na2SO4 70–85 mN/m). These are secondary aggregate ranges, not point-level values with pressure, temperature and concentration coordinates; they cannot validate any of the 135 Jiao rows or be ingested as experimental observations. The 135-row Jiao subset still represents only DI water and four salts at two concentrations each, not the full 180-condition article design.
 
 **Decision unchanged:** all 135 Jiao rows remain quarantined. The DSA-100 instrument is confirmed, but pendant versus sessile configuration remains unknown. Original 1/3 M must be retained as molarity; workbook molality values remain derived and undocumented. The next useful route is author-supplied point data or the publisher's complete tables/supplement, followed by exact row matching and independent reconstruction of any molarity-to-molality conversion from solution density and temperature.
+
+
+## Additional cross-publication data-source investigation (2026-11-21)
+
+A targeted search located Ibrahim (2025), “Advanced generalized machine learning models for predicting hydrogen–brine interfacial tension in underground hydrogen storage systems,” Scientific Reports 15, 18972, DOI: 10.1038/s41598-025-02304-4. Its methods state that a literature-compiled dataset of around 500 observations was assembled from sources including Janjua et al. (2024), with unit checks, outlier removal and duplicate filtering. The article's data-availability statement says data are provided in the manuscript or supplementary information. The PMC record exposes a 104 KB DOCX supplementary-information attachment, but the attachment retrieval endpoint returned a browser verification page during this audit.
+
+This is a potentially useful additional secondary compilation to inspect, not primary-source evidence. It may provide a route to cross-check Janjua-derived records or reveal how the later author interpreted the source. It must not be treated as an independent experimental campaign or as a substitute for Janjua's original tables. The later paper's reported dataset statistics are not sufficient to validate any individual Janjua observation.
+
+The 2025 article's stated dataset size is approximate. No row-level Janjua mapping or exact 135-value match has yet been established. The article's model validation design is not adopted for this project; our publication-held-out benchmark protocol remains unchanged.
+
+**New retrieval lead:** obtain and inspect the 2025 supplementary DOCX (PMC attachment 41598_2025_2304_MOESM1_ESM.docx) and determine whether it contains row-level experimental data, source attribution, or only model/configuration information. If row-level values are present, compare them with the 135 Jiao Janjua rows as a secondary cross-check while preserving Janjua's original paper as the authority.
+
+**Decision unchanged:** no Janjua IFT value is newly verified by this discovery. All 135 Jiao rows remain quarantined pending exact primary-source numerical verification and resolution of method configuration and concentration-conversion provenance.
