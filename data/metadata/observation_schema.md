@@ -36,6 +36,7 @@
 | gas_H2_mole_fraction | number | H2 mole fraction only where reported or explicitly derivable. |
 | gas_CO2_mole_fraction | number | CO2 mole fraction only where reported or explicitly derivable. |
 | gas_CH4_mole_fraction | number | CH4 mole fraction only where reported or explicitly derivable. |
+| gas_phase_y_CO2_non_aqueous | number, optional | State-dependent non-aqueous-phase CO2 mole fraction; never substitute for feed-gas composition. Used for Chow et al. (2018) ternary observations. |
 | electrolyte_identity | string | Explicit salt identity; e.g. NaCl, mixed NaCl–KCl, multicomponent. |
 | electrolyte_composition_original | string | Original composition and basis, including component proportions where reported. |
 | concentration_value_original | number | Original concentration value. |
@@ -91,4 +92,6 @@ A dataset release is not benchmark-ready until:
 
 ## Current project status
 
-This document defines the target schema only. The legacy 91-row CSV has not been transformed into this schema, and no row is certified by this specification alone.
+The schema has been instantiated in a **source-verified stage-1 tranche of 158 observations**: 64 Hosseini primary-SI rows, 79 Chow primary-table rows, and 15 Mirchi primary-table rows. The combined file is `data/processed/canonical/ift_source_verified_stage1_158_observations.csv` (42 columns; SHA-256 `94fde4ebfcc76ab7a12437079467dcc0e24f2cc98a5966f6802238155a25d89a`).
+
+These are source-level verified candidate observations, **not a released benchmark**. Cross-publication overlap/duplicate review, complete conversion tests, final schema tests, frozen snapshot review and split manifests remain mandatory before model training. The original Jiao workbook and legacy CSV remain immutable audit evidence.
