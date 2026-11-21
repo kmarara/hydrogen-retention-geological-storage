@@ -22,12 +22,12 @@
 ## 2. Counts and interpretation
 
 - Total records in Jiao workbook: **450**.
-- Numerically matched workbook rows at currently inspected source precision: **146** (Chow 79 + Higgs preprint 36 + Esfandyari corrected table 16 + Mirchi 15).
+- Numerically matched workbook rows at currently inspected source precision: **218** (Chow 79 + Higgs preprint 36 + Esfandyari corrected table 16 + Isfehani primary SI 72 + Mirchi 15).
 - Hosseini: **64 additional primary-source observations** verified from original SI, but the 64 Jiao rows are duplicate representations and must not increase the independent observation count.
 - Rows with unresolved or conflicting numerical provenance: **168** (Al-Mukainah 6 + Janjua 135 + Daraii 27). Isfehani's 72 values are now source-matched, although metadata gaps still block primary benchmark eligibility.
 - The 36 Higgs matches are against a preprint, not the final published tables; a later 2024 synthesis flags trend inconsistency and treats them as an extra set, so they remain quarantined.
 - The 16 Jiao Esfandyari rows match the official corrigendum's distilled-water block; a separate 16-row formation-brine block has now been extracted directly from corrected Table 2. All 32 corrected central values are captured, but IFT-specific method remains unresolved and the new brine rows are quarantined pending composition/method clarification.
-- Chow and Mirchi have been canonicalized: 79 Chow rows (43 binary Table 4 + 36 ternary Table 6) and 15 Mirchi Table 6 rows, including source uncertainty and corrected gas-composition semantics. Global overlap/duplicate review remains open.
+- Chow, Isfehani and Mirchi have primary-source numerical reconciliations: 79 Chow rows (43 binary Table 4 + 36 ternary Table 6), 72 Isfehani SI rows, and 15 Mirchi Table 6 rows. Chow and Mirchi canonical derivatives include source uncertainty; Isfehani's supplied SI has no uncertainty field and its gas-percentage basis/salt identity remain unresolved. Global overlap/duplicate review remains open.
 - These figures describe audit status, not a count of globally eligible independent measurements.
 
 ## 3. Current conservative benchmark eligibility
