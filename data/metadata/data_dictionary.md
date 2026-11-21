@@ -45,3 +45,22 @@ Every observation in a future processed dataset should have:
 ## Current source-level status
 
 See `data/metadata/source_register.csv`. Bibliographic metadata and broad experimental ranges have been confirmed from publisher/institutional records. Individual repository values have not yet been verified against source tables or supplementary data.
+
+## Non-destructive legacy CSV audit
+
+Run:
+
+```bash
+python scripts/audit_ift_csv.py data/raw/ift_experimental.csv
+```
+
+The default report is written to `outputs/data_audit/legacy_ift_profile.json`. Override it with `--out path/to/report.json`. The script skips comment lines, checks required columns and numeric fields, profiles source/system counts and ranges, and flags exact duplicates and repeated IFT values at matching pressure/temperature across different salinities.
+
+These are diagnostic flags only. The script does not establish whether a value is experimentally measured, correct, independent, or suitable for model training. In particular, repeated IFT values must be checked against the original supporting information rather than automatically deleted.
+
+Run its unit tests with:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
