@@ -13,7 +13,7 @@
 | Hosseini et al. (2022) | 80-143 | 64 | 64/64 match original SI exactly after correction of legacy CSV errors | Pendant drop; mixed NaCl-KCl composition; original SI includes density difference and reported uncertainty. | Jiao copies are duplicates of canonical 64-row primary-SI extraction; exclude Jiao copies from independent sample count. |
 | Higgs et al. (2022) | 144-179 | 36 | 36/36 match EarthArXiv preprint appendix at displayed precision; final published numerical tables not accessible for row-by-row reconciliation | Pendant-drop IFT verified in preprint; final-version, salinity-basis and uncertainty checks remain. A 2024 synthesis flags trend inconsistency and treats Higgs data as an extra set. | Quarantined; retain as a potential external challenge set, not primary training data, pending final-source verification and discrepancy review. |
 | Esfandyari et al. (2022) + 2023 corrigendum | 180-195 | 16 | 16/16 Jiao rows match corrected distilled-water Table 2; 16 additional formation-brine values now extracted directly from the same corrected Table 2 | IFT-specific drop configuration remains unresolved; formation-brine recipe/concentrations not yet fully verified. | 32 corrected central values now captured across separate distilled-water and formation-brine blocks; new 16-row formation-brine file quarantined pending chemistry/method clarification. |
-| Isfehani et al. (2023) | 196-267 | 72 | No row-level numerical match; ECU CC BY 4.0 repository Download endpoint and publisher full text inaccessible (HTTP 403) | Pendant-drop method confirmed by ECU and publisher abstracts; ResearchGate has no full text. Row-level conditions, concentration/gas basis, uncertainty and coordinates remain unverified. | All 72 remain quarantined; direct author data request is the next route. |
+| Isfehani et al. (2023) | 196-267 | 72 | **72/72 exact IFT matches** to primary SI Tables S1-S3; P/T/molality grid reconciled after rounded unit conversions. | Pendant drop confirmed by publisher abstract and Jiao method code 0. Critical Jiao mapping error: CO2 percentage stored in CH4 column for all 72 rows; corrected extraction preserves source composition wording. Salt identity/brine recipe, gas-percentage basis and uncertainty remain unreported in supplied SI. | 72 primary-SI rows extracted and source-numerically verified; retained outside eligible tranche pending metadata clarification. No data-value request email needed. |
 | Al-Mukainah et al. (2022) | 268-273 | 6 | No exact row-level match; workbook endpoints conflict with source-text endpoints | Primary paper distinguishes pendant-drop IFT from sessile-drop contact-angle work; 10 wt% NaCl is source basis. | Exclude pending exact numerical source/author data; correct method metadata in derivative only. |
 | Mirchi et al. (2022) | 274-288 | 15 | 15/15 match primary Table 6 central values at two-decimal precision | Pendant drop verified; five H2-CH4 mixtures; source uncertainty available but omitted from Jiao. | Source-verified candidate; canonical extraction of uncertainty and global overlap review required. |
 | Janjua et al. (2024) | 289-423 | 135 | No row-level numerical match yet | DSA-100 verified; pendant/sessile configuration unresolved. Article reports M, workbook contains derived molality with undocumented conversion basis. | Exclude pending numerical data and metadata reconciliation. |
@@ -24,7 +24,7 @@
 - Total records in Jiao workbook: **450**.
 - Numerically matched workbook rows at currently inspected source precision: **146** (Chow 79 + Higgs preprint 36 + Esfandyari corrected table 16 + Mirchi 15).
 - Hosseini: **64 additional primary-source observations** verified from original SI, but the 64 Jiao rows are duplicate representations and must not increase the independent observation count.
-- Rows with unresolved or conflicting numerical provenance: **240** (Isfehani 72 + Al-Mukainah 6 + Janjua 135 + Daraii 27).
+- Rows with unresolved or conflicting numerical provenance: **168** (Al-Mukainah 6 + Janjua 135 + Daraii 27). Isfehani's 72 values are now source-matched, although metadata gaps still block primary benchmark eligibility.
 - The 36 Higgs matches are against a preprint, not the final published tables; a later 2024 synthesis flags trend inconsistency and treats them as an extra set, so they remain quarantined.
 - The 16 Jiao Esfandyari rows match the official corrigendum's distilled-water block; a separate 16-row formation-brine block has now been extracted directly from corrected Table 2. All 32 corrected central values are captured, but IFT-specific method remains unresolved and the new brine rows are quarantined pending composition/method clarification.
 - Chow and Mirchi have been canonicalized: 79 Chow rows (43 binary Table 4 + 36 ternary Table 6) and 15 Mirchi Table 6 rows, including source uncertainty and corrected gas-composition semantics. Global overlap/duplicate review remains open.
@@ -39,7 +39,7 @@ The source-verified stage-1 canonical tranche now contains **158 rows across thr
 
 All 158 have unique observation IDs, source locations, IFT values, uncertainty records, provenance labels and grouping identifiers. The combined 42-column file is `data/processed/canonical/ift_source_verified_stage1_158_observations.csv`, SHA-256 `94fde4ebfcc76ab7a12437079467dcc0e24f2cc98a5966f6802238155a25d89a`.
 
-This is a source-verified candidate tranche, not a globally released benchmark. The global duplicate/overlap audit and split-manifest gate remain open. Esfandyari's 16 corrected values are numerically verified but the IFT drop configuration is unresolved. Higgs's 36 values remain quarantined until final-version reconciliation.
+This is a source-verified candidate tranche, not a globally released benchmark. The global duplicate/overlap audit and split-manifest gate remain open. Esfandyari's 16 corrected values are numerically verified but the IFT drop configuration is unresolved. Higgs's 36 values remain quarantined until final-version reconciliation. Isfehani's 72 primary-SI values are now extracted and numerically reconciled, but remain outside this eligible tranche because the supplied SI does not identify the salt species/complete brine recipe, gas-percentage basis or uncertainty.
 
 **No 450-row Jiao workbook export is approved as the benchmark dataset.** The original workbook remains immutable audit evidence.
 
@@ -74,3 +74,14 @@ Before model training:
 6. Run cross-source duplicate/overlap review, particularly for apparatus-validation points and reused literature data.
 
 **Decision:** stage-1 canonical extraction is complete for 158 source-level candidate observations. The first automated overlap screen found no exact or near matches, but manual lineage review and schema/conversion tests remain. Do not start model training yet.
+
+
+## 7. Isfehani primary-SI reconciliation update (2026-11-21)
+
+The supplied Isfehani supporting information contains 72 primary numerical observations in Tables S1-S3 (pages 2-4). All 72 were matched one-to-one to Jiao Ref [5], observations 196-267, with **72/72 exact IFT central-value matches**. Pressure, temperature and molality combinations reconcile after accounting for rounded MPa/K values in Jiao.
+
+A secondary-workbook species mapping error was identified: the Isfehani CO2 percentages are stored in the Jiao `CH4` column, while the Jiao `CO2` column is zero, for all 72 rows. The corrected extraction does not preserve this erroneous CH4 assignment.
+
+The local 72-row extraction is `/mnt/data/recovered/isfehani_2023_ift_observations.csv`; a 230-row local extracted inventory combines the 158 prior candidate rows with the 72 Isfehani rows. These files are locally prepared; the 158-row eligible candidate tranche remains unchanged.
+
+The 72 Isfehani rows are source-numerically verified, with pendant-drop method supported by the publisher abstract and workbook method code 0. They remain `benchmark_eligible_primary=false` because the supplied SI does not specify salt identity/complete brine recipe, gas percentage basis, or measurement uncertainty/repeatability. No missing chemistry is inferred from other publications.
