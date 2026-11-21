@@ -1,0 +1,54 @@
+{
+  "source_doi": "10.1021/acs.energyfuels.6c01887",
+  "source_article_url": "https://doi.org/10.1021/acs.energyfuels.6c01887",
+  "source_filename": "ef6c01887_si_002.xlsx",
+  "source_sha256": "9ef4197720c9f37237bda9de8bc666d5deca63d209ccb24c4f957f010efb6d84",
+  "source_sheet": "Experiment data from literature",
+  "source_excel_data_rows": [
+    3,
+    452
+  ],
+  "observation_count": 450,
+  "study_counts": {
+    "1": 79,
+    "2": 64,
+    "3": 36,
+    "4": 16,
+    "5": 72,
+    "6": 6,
+    "7": 15,
+    "8": 135,
+    "9": 27
+  },
+  "method_code_counts": {
+    "0": 266,
+    "1": 184
+  },
+  "numeric_ranges": {
+    "pressure_MPa": {
+      "min": 0.1,
+      "max": 45.2
+    },
+    "temperature_K": {
+      "min": 293,
+      "max": 448.87
+    },
+    "IFT_mN_m": {
+      "min": 29.56,
+      "max": 88.99
+    }
+  },
+  "missing_required_values": 0,
+  "exact_duplicate_records": 0,
+  "source_reference_count": 9,
+  "normalized_csv": "observations_audit.csv",
+  "source_references_csv": "source_references.csv",
+  "status": "extracted_and_structurally_audited; scientific provenance verification pending",
+  "important_limitations": [
+    "Study references are forward-filled from workbook markers; original page/table/figure coordinates are not provided per row.",
+    "All row-level provenance statuses are unknown pending verification against original publications.",
+    "No observation is certified for the primary benchmark by this ingestion step.",
+    "No legacy project data are merged or modified.",
+    "Method codes: 0=Pendant Drop; 1=Sessile Drop."
+  ]
+}
