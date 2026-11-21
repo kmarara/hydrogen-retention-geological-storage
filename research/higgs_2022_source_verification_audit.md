@@ -61,3 +61,14 @@ The row groups cover low-pressure distilled-water observations, low-pressure sal
 - Published article: https://www.sciencedirect.com/science/article/pii/S0360319922005456
 - Preprint PDF: https://eartharxiv.org/repository/object/2762/download/5615/
 - DOI: https://doi.org/10.1016/j.ijhydene.2022.02.022
+
+
+## Final-publication reconciliation checkpoint (2026-11-21)
+
+The publisher record confirms that the work was formally published as Scott Higgs et al., “In-situ hydrogen wettability characterisation for underground hydrogen storage,” *International Journal of Hydrogen Energy* 47(26), 13062–13075 (26 March 2022), DOI 10.1016/j.ijhydene.2022.02.022. The EarthArXiv record explicitly links this preprint to that published version. However, the accessible publisher record exposes bibliographic information and highlights, not the final article's numerical IFT tables or a downloadable supplementary dataset. I therefore **cannot certify that the 36 preprint appendix rows are unchanged in the final version**. Their existing 36/36 match is a preprint-level numerical match only; do not relabel it as final-publication verification.
+
+The preprint appendix records six IFT blocks: 7 low-pressure distilled-water rows, 4 low-pressure 2000-ppm NaCl rows, 2 low-pressure 5000-ppm NaCl rows, 9 high-pressure distilled-water rows, 9 high-pressure 1000-ppm NaCl rows, and 5 high-pressure 5000-ppm NaCl rows. The reported IFT method is pendant drop; the captive-bubble method applies to the contact-angle measurements, not the IFT observations. Temperature is approximately 298 K throughout. Preserve original pressure values and the reported ppm basis; do not silently convert ppm to molality without confirming the preparation basis.
+
+A separate 2024 synthesis/modeling paper by Hosseini and Leonenko states that the Higgs and Esfandyari data were inconsistent with trends in the other samples and were assigned to an “extra set” rather than ordinary train/test allocation. This is not proof that the Higgs measurements are erroneous; it is an independent warning that the data should be examined as a distinct external challenge set, with source and methodological differences investigated before pooling. The study's treatment strengthens the case for quarantining Higgs rows from the primary benchmark until final-version and data-lineage verification is complete.
+
+**Disposition:** all 36 Higgs rows remain quarantined. Required evidence: final publisher PDF or author-supplied final tables/data; row-by-row comparison against the preprint appendix; exact salinity preparation basis and uncertainty semantics; and review of the later-reported trend discrepancy. No Higgs rows have been added to the canonical stage-1 dataset.
