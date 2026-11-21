@@ -1,6 +1,6 @@
 # Consolidated provenance matrix — Jiao 2026 supplementary workbook
 
-**Status:** audit synthesis; not a released benchmark dataset.  
+**Status:** audit synthesis; stage-1 canonical tranche assembled, not a released benchmark dataset.  
 **Audit date:** 2026-11-21  
 **Secondary workbook:** `ef6c01887_si_002.xlsx`, 450 rows, nine cited study groups.  
 **Purpose:** distinguish numerical source matching, metadata verification, duplicate lineage, and benchmark eligibility. A numerical match alone does not make a row benchmark-ready.
