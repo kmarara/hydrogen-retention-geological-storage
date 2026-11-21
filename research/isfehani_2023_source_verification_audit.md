@@ -48,3 +48,10 @@ The study-level pendant-drop method is supported by the abstract. It is reasonab
 - Publisher article record: https://www.sciencedirect.com/science/article/pii/S016773222300082X
 - ECU institutional repository record: https://ro.ecu.edu.au/ecuworks2022-2026/1859/
 - DOI: https://doi.org/10.1016/j.molliq.2023.121279
+
+
+## Additional access and provenance checks (2026-11-21)
+
+The ECU repository record was reopened and its explicit Download link followed. The repository resolves the file to a `cgi/viewcontent.cgi` endpoint, which returned HTTP 403 in this session. The record itself explicitly identifies the article as CC BY 4.0 and confirms pendant-drop IFT measurements; the publisher's accessible article record likewise confirms pendant-drop measurements and states “No data was used for the research described in the article.” That data-availability statement does not provide raw experimental values and does not establish that the 72 Jiao points are source-verified. A ResearchGate record was also checked and explicitly indicates that no full text is available there, offering only an author full-text request. No alternative public numerical table or raw-data repository was located in this search pass.
+
+**Decision unchanged:** 72 rows remain quarantined. Do not reconstruct the numerical table from the Jiao compilation or use trend statements as substitute measurements. The most efficient next route is a direct request to the corresponding author(s) for the accepted manuscript and row-level data/table, including exact gas fractions, salt basis, pressure/temperature coordinates, uncertainty and any reused validation points.
