@@ -63,3 +63,34 @@ Potentially defensible directions to investigate:
 ## 5. Research integrity rule
 
 Do not claim a literature gap, dataset size, model superiority, experimental validation, or novelty until the full relevant sources and source data have been inspected. Keep a dated literature matrix and document negative findings as well as positive ones.
+
+
+## 6. Full-text verification update (21 November 2026)
+
+### Hosseini & Leonenko (2024): inspected full publisher-hosted PDF
+
+The full 2024 paper was inspected. It reports a compilation of 2,569 samples from 16 sources (the paper's abstract/search metadata elsewhere can show slightly different totals; the database section states 2,569). It identifies 23 gas compositions and uses composition-group splitting: five compositions were assigned to testing and 18 to training. The authors also moved 68 samples from Higgs et al. and Esfandyari et al. to an "extra" set because they considered those records inconsistent with common trends. The paper reports 603 test samples and 68 extra samples. This is important prior work: group-based validation by gas composition, external/extra-set evaluation, SHAP and multiple ML models are already in the literature. (Full text, pp. 1396–1399; Table 1 and Sections 3.1–3.4.)
+
+The 2024 dataset is heterogeneous: it combines pure H2, H2/CO2, H2/CH4 and multicomponent H2/CO2/CH4/N2 mixtures, with different brine systems and experimental sources. For example, its Table 1 identifies Hosseini et al. (2022) as 64 observations for pure H2 and 0.864 NaCl + 0.136 KCl brine at 1.05, 3.15 and 4.95 mol/kg, while other source groups include NaCl-only brines and mixed formation brines. This reinforces the need to preserve source, gas composition and electrolyte identity rather than pool records as if they were one homogeneous H2–NaCl dataset.
+
+The paper explicitly says standard scaling should be fitted on training data and then applied to test data to avoid leakage. It also explains why gas composition is more informative than specific gravity alone. The paper's group split is by gas composition, not a leave-one-publication-out evaluation. Therefore, a genuinely independent publication-level replication/transfer test remains a distinct question to investigate; it must not be presented as an established gap until the source-level dataset and later work have been checked.
+
+### Jiao et al. (2026): abstract and publisher-indexed section snippets inspected
+
+The publisher-indexed record reports a 2,689-measurement database (the indexed conclusion snippet elsewhere says 2,673; this discrepancy needs full-text resolution). The abstract claims IVYA-CatBoost, R2=0.9991, RMSE=0.29 mN/m, unseen-electrolyte generalisation, SHAP/trend diagnostics, Williams-plot applicability diagnostics, and conformalised quantile regression with calibrated 95% intervals. The publisher-indexed methods snippets say the source data were compiled from published experimental studies. The full article could not be opened through the publisher in this review, so these are abstract/snippet-level claims, not an independent verification of the methods or results.
+
+This study directly overlaps the initial proposal's broad claims around machine learning, electrolyte generalisation, physical trend diagnostics and calibrated uncertainty. Those elements cannot be claimed as novel in isolation. The more defensible potential distinction is an independently reproducible, row-level source-lineage audit and publication-held-out reproduction protocol, if full-text comparison confirms that these are not already addressed.
+
+### Ai & Trusler (2026) and Hosseini et al. (2022)
+
+Publisher records confirm Ai & Trusler's experimental H2–NaCl(aq) pendant-drop scope: 0, 1, 3 and 5 mol/kg NaCl; 298.15–423.15 K; 0.5–30 MPa. The repository's 27 entries are labelled representative points for empirical-correlation validation. Until matched to the article's tables, figures or supplementary data, they remain representative/unverified rather than independent experimental rows.
+
+The Hosseini (2022) publisher abstract confirms pendant-drop H2–brine measurements and an empirical correlation. Its brine is not simply NaCl: the 2024 source table identifies the salt mixture as 0.864 NaCl + 0.136 KCl, at total salt molalities 1.05, 3.15 and 4.95 mol/kg. The supplementary DOCX is listed in a ResearchGate record but has not yet been obtained or inspected.
+
+### Revised provisional research positioning
+
+Do not position the work as the first IFT ML benchmark, first grouped validation, first electrolyte generalisation study, first SHAP/physical-trend assessment, or first calibrated uncertainty study. A narrower candidate is:
+
+"An independently reproducible, source-aware audit of published H2–brine IFT correlations and predictive models, quantifying how source provenance, data-generation status, electrolyte identity and publication-level holdout affect reported predictive performance."
+
+This remains a hypothesis for the literature gap, not a novelty claim. It must be tested against the full Jiao et al. (2026) article and the original source datasets before the proposal is finalised.
