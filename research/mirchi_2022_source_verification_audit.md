@@ -33,6 +33,18 @@ No numerical discrepancies were found among the 15 central IFT values.
 7. **Source coordinates:** exact numerical source location is Table 6, five gas-mixture row blocks × three temperature entries. The row ordering maps directly to workbook observations 274–288.
 8. **Validation data and duplicate lineage:** Table 4 contains apparatus-validation comparisons against literature for pure gas/brine systems. Those validation rows are not the 15 H2-CH4 mixture observations in Table 6. Do not import them as additional observations or confuse them with the study's new mixture dataset. A wider cross-publication overlap review remains necessary.
 
+## Canonical extraction completed (stage 1)
+
+The 15 H2-containing Table 6 observations have been transcribed into the source-level canonical tranche `data/processed/canonical/chow_mirchi_2022_ift_observations_stage1.csv` and included in `data/processed/canonical/ift_source_verified_stage1_158_observations.csv`.
+
+- The five H2/CH4 compositions are represented explicitly; H2 is calculated as the balance of the source-reported CH4 fraction.
+- Original pressure is retained as 1000 psi and normalized pressure is calculated as 6.894757 MPa (not rounded to 6.89).
+- Original temperatures are retained as 22, 40 and 60 °C and normalized to 295.15, 313.15 and 333.15 K.
+- Source-reported 2 wt% NaCl is retained; 0.349 mol/kg is stored as a derived molality using 2 g NaCl per 100 g solution (0.098 kg water).
+- All 15 source uncertainties are carried as reported ± values; their statistical meaning is not assumed.
+- The Jiao workbook's methane fraction is stored under its CO2 column; the canonical derivative maps it to CH4, with CO2=0.
+- Source table coordinates, publication/experiment/fluid-system group IDs and duplicate lineage are populated.
+
 ## Eligibility decision
 
 - **Numerical values:** 15/15 verified against primary published Table 6.
@@ -42,7 +54,7 @@ No numerical discrepancies were found among the 15 central IFT values.
 - **Pressure/temperature:** source conditions verified; workbook units are rounded conversions.
 - **Uncertainty:** source-reported for all 15; semantics need exact definition before use.
 - **Provenance classification:** table_extracted.
-- **Benchmark admission:** eligible for the source-verified data layer, subject to the global overlap/duplicate review and canonical observation-schema validation. Do not mark the full benchmark dataset as released based on this source alone.
+- **Benchmark admission:** canonicalized as a source-level candidate in the 158-row stage-1 snapshot. Global overlap/duplicate review and frozen split-manifest checks remain open; no model training yet.
 
 ## Sources
 
