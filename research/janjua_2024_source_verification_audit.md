@@ -151,3 +151,33 @@ A targeted search located Janjua's publisher article record and KFUPM institutio
 4. A row-level reconciliation log documenting exact matches, conversion-only matches, mismatches, omitted conditions and unresolved cases.
 
 **Status remains unchanged:** all Janjua records in both secondary compilations remain excluded from the primary benchmark pending primary-source verification.
+
+
+## 2026-11-21: row-level comparison with Jiao 2026 and Ibrahim 2025 secondary compilations
+
+The user re-uploaded the Jiao 2026 supplementary workbook (sheet `Experiment data from literature`) and the previously extracted Ibrahim 2025 supplementary Janjua block was available for direct comparison. The 135 Jiao rows are observations 289–423; the Ibrahim DOCX-derived Janjua block contains 180 rows.
+
+### Comparison procedure
+- Matched rows by fluid-condition group and the five pressure × three temperature coordinates, not by source row order.
+- Converted Ibrahim's printed pressure from psi to MPa using 0.006894757293 MPa/psi and temperature from °F to K using `(°F − 32) × 5/9 + 273.15`.
+- Compared the two IFT values in mN/m.
+- For the duplicated Ibrahim CaCl2 and MgCl2 labels, separated the two repeated 15-condition blocks using their repeated five-pressure sequences at each temperature. The block pairing to Jiao's lower/higher molality group is an observed cross-compilation pattern, not confirmation of the original Janjua concentration label.
+
+### Results
+- **135/135 Jiao observations** have a corresponding pressure-temperature condition in the Ibrahim Janjua block.
+- All 135 P-T pairs reconcile within the precision of the printed units (maximum absolute pressure difference approximately 0.00521 MPa; maximum temperature difference 0.15 K).
+- **13/135 IFT values are numerically identical** at the displayed precision.
+- **134/135 differ by no more than 0.05 mN/m**; mean absolute difference is approximately 0.02644 mN/m.
+- One material discrepancy requires review: Jiao observation 396 reports 74.46 mN/m; Ibrahim secondary-table row 183 reports 74.80 mN/m. The paired condition is CaCl2, 10 MPa, 77 °F in Ibrahim (approximately 298 K); Jiao-minus-Ibrahim difference is −0.34 mN/m. Neither secondary value is promoted as correct.
+- The Jiao 135-row subset corresponds to nine represented condition groups: DI water; NaCl and KCl at two concentrations each; CaCl2 and MgCl2 in two molality-like groups each.
+- The Ibrahim 180-row block additionally contains 15 seawater rows and 30 Na2SO4 rows, accounting for the 45 records not represented in Jiao's Janjua subset.
+
+### Concentration-label issue retained
+Ibrahim's supplementary table prints both CaCl2 blocks as `1M-CaCl2` and both MgCl2 blocks as `1M-MgCl2`. Jiao's corresponding salt columns distinguish lower and higher values (CaCl2 1.05/3.28 mol/kg; MgCl2 1.00/3.23 mol/kg). The higher blocks pair numerically with the second Ibrahim block, but the printed Ibrahim labels remain ambiguous. **Do not relabel the second blocks as 3 M** until Janjua's primary article/SI or the authors confirm this. Similarly, do not treat Jiao's workbook molality-like values as primary-reported concentrations; the primary design is described as 1/3 M and any conversion remains undocumented.
+
+### Method and eligibility
+All 135 Jiao rows carry method code 1, which the Jiao workbook legend maps to Sessile Drop. This is a secondary workbook assignment only. Janjua's accessible primary-source records identify the Krüss DSA-100 but do not establish the IFT drop configuration. Therefore this comparison does not resolve the method conflict/uncertainty.
+
+The Ibrahim DOCX is a secondary ML compilation and Jiao is also a secondary compilation. Their close numerical agreement is a cross-source consistency check, not independent experimental replication and not primary-source verification. The 180 Ibrahim records and 135 Jiao records remain benchmark-ineligible. The original Janjua numerical tables/SI or author-supplied data are still required, especially to resolve observation 396, the duplicate CaCl2/MgCl2 labels, concentration conversions, method configuration, and uncertainties/repeatability.
+
+A row-level comparison file is recorded at `research/janjua_jiao_ibrahim_135_row_reconciliation_2026-11-21.csv`. It preserves both printed source values, converted P-T values, the source-row mapping, the secondary printed salinity label, and the single mismatch flag.
