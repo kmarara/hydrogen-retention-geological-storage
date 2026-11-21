@@ -2,7 +2,7 @@
 
 **Audit date:** 2026-11-21  
 **Primary article:** Y. T. Florence Chow, Geoffrey C. Maitland and J. P. Martin Trusler, “Interfacial tensions of (H2O + H2) and (H2O + CO2 + H2) systems at temperatures of (298–448) K and pressures up to 45 MPa,” *Fluid Phase Equilibria* 475 (2018), 37–44. DOI: [10.1016/j.fluid.2018.07.022](https://doi.org/10.1016/j.fluid.2018.07.022).  
-**Erratum:** *Fluid Phase Equilibria* 503 (2020), 112315. DOI: [10.1016/j.fluid.2018.07.022](https://doi.org/10.1016/j.fluid.2018.07.022) (publisher erratum record: https://www.sciencedirect.com/science/article/abs/pii/S0378381219303760).  
+**Erratum:** *Fluid Phase Equilibria* 503 (2020), 112315. DOI: [10.1016/j.fluid.2019.112315](https://doi.org/10.1016/j.fluid.2019.112315) (publisher erratum record: https://www.sciencedirect.com/science/article/abs/pii/S0378381219303760).  
 **Jiao workbook group:** Ref [1], observations 1–79, sheet `Experiment data from literature`.  
 **Primary source inspected:** Imperial College London accepted-version PDF; publisher erratum record; NIST ThermoML bibliographic/data record.
 
