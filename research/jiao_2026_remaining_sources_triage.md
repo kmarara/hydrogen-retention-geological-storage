@@ -30,7 +30,9 @@ DOI: 10.1016/j.fluid.2018.07.022. The paper reports pendant-drop IFT measurement
 DOI: 10.1016/j.ijhydene.2022.02.022. The study investigates H2-brine-quartz wettability and IFT using captive-bubble, pendant-drop and in-situ 3D micro-CT methods. The workbook's 36 records cover pure water and three low NaCl molalities, with pendant-drop method code 0. The published abstract reports a narrow 6.89-20.68 MPa pressure range for IFT and no clear salinity correlation over 1000 and 5000 ppm NaCl. Need match exact 36 rows against source tables/figures and separate IFT from wettability-related measurements.
 
 ### [4] Esfandyari et al. (2022) — 16 records
-DOI: 10.1016/j.est.2022.104866; corrigendum DOI: 10.1016/j.est.2022.106162. The 16 workbook values are the corrected H2/distilled-water values in the corrigendum's replacement Table 2 (four pressures × four temperatures). The corrigendum states the original Figure 6 data had a systematic error due to surfactant in the experimental system and that experiments were repeated. This is a positive value-level match to the corrected publication, not to the superseded original figure. The workbook assigns method code 1 (Sessile Drop); the method metadata must be checked against the article's IFT-specific procedure before acceptance. Formation-brine values in the corrigendum are not represented in this 16-row workbook group.
+DOI: 10.1016/j.est.2022.104866; corrigendum DOI: 10.1016/j.est.2022.106162. Direct row-by-row comparison confirms all 16 Jiao workbook IFT values exactly match the corrigendum's replacement Table 2 for H2/distilled water: four pressures (10, 40, 70, 100 bar) × four temperatures (20, 40, 60, 80 °C). Workbook pressure values (1, 4, 7, 10 MPa) are exact bar-to-MPa conversions; temperatures (293, 313, 333, 353 K) are rounded Kelvin representations of 20, 40, 60, 80 °C. The corrigendum states the original Figure 6 data had a systematic error due to surfactant contamination and that all experiments were repeated; the replacement Table 2 is the authoritative numerical source. This is a fully verified numerical match to corrected data, not to superseded Figure 6.
+
+The workbook assigns method code 1 (Sessile Drop) to these IFT rows. The accessible publisher abstract and institutional record do not expose the IFT-specific drop configuration in the original methods section. Do not infer the method from the instrument or from the contact-angle technique. Method code therefore remains unverified pending inspection of the full methods text or author confirmation. Formation-brine values in the corrigendum are not represented in this 16-row workbook group. Retain the 16 values as source-verified corrected observations, but keep method as unresolved metadata and do not use the method feature as if it were verified. See research/esfandyari_2022_source_verification_audit.md.
 
 ### [5] Isfehani et al. (2023) — 72 records
 DOI: 10.1016/j.molliq.2023.121279. The paper studies brine + H2 + CO2 systems and reports IFT changes with CO2 fraction, pressure, temperature and salinity. Workbook group has three NaCl molalities (0, 1.05, 3.15 mol/kg) and three CO2 fractions (0.3, 0.5, 0.7), with method code 0 (Pendant Drop). Need row-level match to source tables and verify whether any values were reused from other publications for method validation rather than newly measured.
@@ -70,7 +72,7 @@ DOI: 10.1016/j.ptlrs.2025.11.004. The article record is in Petroleum Research vo
 ## Current decisions
 
 - Hosseini [2]: primary-source extraction completed; 64 canonical source rows retained; 64 Jiao workbook copies identified as duplicates and excluded from independent row counts.
-- Esfandyari [4]: 16/16 IFT values match the corrigendum's corrected distilled-water table; method metadata remains under review.
+- Esfandyari [4]: all 16 IFT values match the corrigendum's corrected distilled-water Table 2 exactly; method code remains unverified pending full methods text.
 - All other source groups [1], [3], [5]-[9]: structurally triaged but not yet certified against primary source tables. Do not yet promote their workbook rows to primary benchmark eligibility.
 - No model training or benchmark metrics are authorised by this audit.
 
@@ -78,5 +80,5 @@ DOI: 10.1016/j.ptlrs.2025.11.004. The article record is in Petroleum Research vo
 
 1. Resolve the method-code conflict for Al-Mukainah [6] and verify its six IFT values.
 2. Janjua [8]: 135-row design subset structurally audited; obtain primary numerical data and confirm molarity-to-molality conversion and IFT drop configuration.
-3. Verify Esfandyari [4] IFT-specific measurement method against the article.
+3. Esfandyari [4]: 16 corrected IFT values verified exactly against corrigendum Table 2; resolve only the drop-method metadata from full article methods or author confirmation.
 4. Obtain primary source tables/supplementary data for Chow [1], Higgs [3], Isfehani [5], Mirchi [7], and Daraii [9].
