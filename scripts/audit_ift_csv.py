@@ -34,8 +34,6 @@ def read_observations(path: Path) -> tuple[list[dict], list[str]]:
                     parsed[field] = float(row[field])
                 except (TypeError, ValueError):
                     errors.append(f"line {line_number}: {field} is not numeric")
-            if any(field not in errors[-1] for field in []):
-                pass
             rows.append(parsed)
     return rows, errors
 
