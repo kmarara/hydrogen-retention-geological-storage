@@ -85,3 +85,17 @@ A secondary-workbook species mapping error was identified: the Isfehani CO2 perc
 The local 72-row extraction is `/mnt/data/recovered/isfehani_2023_ift_observations.csv`; a 230-row local extracted inventory combines the 158 prior candidate rows with the 72 Isfehani rows. These files are locally prepared; the 158-row eligible candidate tranche remains unchanged.
 
 The 72 Isfehani rows are source-numerically verified, with pendant-drop method supported by the publisher abstract and workbook method code 0. They remain `benchmark_eligible_primary=false` because the supplied SI does not specify salt identity/complete brine recipe, gas percentage basis, or measurement uncertainty/repeatability. No missing chemistry is inferred from other publications.
+
+
+## 8. Janjua secondary-compilation cross-check (2026-11-21)
+
+The Jiao 2026 workbook was re-uploaded and observations 289–423 (135 Janjua-labelled rows) were compared with the 180 Janjua-labelled rows extracted from Ibrahim 2025 supplementary Table S1.
+
+- 135/135 Jiao observations have a corresponding P-T condition in the Ibrahim block after converting psi to MPa and °F to K; maximum absolute coordinate differences are approximately 0.00521 MPa and 0.15 K.
+- 134/135 IFT pairs agree within 0.05 mN/m; 13/135 are numerically identical at the displayed precision; mean absolute difference is approximately 0.02644 mN/m.
+- One unresolved mismatch: Jiao observation 396 = 74.46 mN/m versus Ibrahim secondary row 183 = 74.80 mN/m (CaCl2, 10 MPa, approximately 298 K).
+- The 45 Ibrahim rows not represented in Jiao are 15 seawater and 30 Na2SO4 rows.
+- Ibrahim prints both repeated CaCl2 blocks and both repeated MgCl2 blocks as 1M. Jiao distinguishes lower/higher molality-like values for these blocks, but this does not authorise relabelling the second Ibrahim blocks as 3M. Original Janjua source confirmation remains necessary.
+- Jiao method code 1 maps to Sessile Drop in the Jiao legend, but Janjua's primary-source DSA-100 description does not verify the drop configuration.
+
+This is a cross-check between two secondary compilations, not primary-source verification or independent experimental replication. All 135 Jiao and 180 Ibrahim Janjua-derived rows remain excluded from primary benchmark training. See the detailed Janjua audit for the comparison protocol and unresolved evidence needs.
