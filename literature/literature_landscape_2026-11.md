@@ -94,3 +94,29 @@ Do not position the work as the first IFT ML benchmark, first grouped validation
 "An independently reproducible, source-aware audit of published H2–brine IFT correlations and predictive models, quantifying how source provenance, data-generation status, electrolyte identity and publication-level holdout affect reported predictive performance."
 
 This remains a hypothesis for the literature gap, not a novelty claim. It must be tested against the full Jiao et al. (2026) article and the original source datasets before the proposal is finalised.
+
+
+## 7. Newly indexed study requiring immediate review (22 November 2026)
+
+### Davoodi & Wood (2026): physics-guided, chemistry-aware empirical IFT equations
+
+Davoodi, S., & Wood, D. A. (2026). “Physics-informed and chemistry-aware framework to predict hydrogen-brine interfacial tension for underground hydrogen storage reservoir conditions.” *Geoenergy Science and Engineering*, 266, Article 214609. DOI: [10.1016/j.geoen.2026.214609](https://doi.org/10.1016/j.geoen.2026.214609).
+
+**Evidence inspected:** publisher-indexed abstract and bibliographic metadata, plus an independent library catalogue record. The full article and its underlying data were not inspected in this update. Treat all methodological details below as abstract-level claims pending full-text review.
+
+The abstract reports a 2,649-record compilation of published gas–brine IFT measurements, divided into:
+- Class I: H2 only;
+- Class II: binary H2+CO2, H2+CH4 or H2+N2 mixtures;
+- Class III: quaternary H2+CO2+CH4+N2 mixtures.
+
+It develops 13 class-specific equations using physics-guided chemistry-aware feature influence (CAFI) and customized formulaic optimization (CFO), plus three general equations for the combined dataset. The abstract reports the best Class III equation at R2=0.9602 and RMSE=2.27 mN/m for 2,240 records, and the best general equation at R2=0.7878 and RMSE=5.25 mN/m for 2,649 records. It states that class-focused equations outperform general equations and CFO equations outperform CAFI equations.
+
+**Implications for our project positioning:**
+1. Physics-guided and chemistry-aware empirical modelling of hydrogen/cushion-gas–brine IFT is now explicitly represented in the late-2026 literature. We must not claim that such modelling, class-specific equations or large multi-source compilations are absent.
+2. The abstract does not establish whether the 2,649 records are independently source-audited, how duplicate lineage is handled, whether source-level holdouts are used, or how uncertainty is quantified. These are questions for the full paper, not assumptions.
+3. The paper's 2,240-record Class III result appears to be dominated by quaternary gas-mixture records. Its headline scores are not directly comparable to our proposed pure-H2/limited-binary source-verified tranche without matching fluid-system definitions and evaluation partitions.
+4. The possible distinction for our work remains an independently reproducible observation-level provenance audit and publication-held-out evaluation of pretrained and conventional tabular models, but this is only a candidate distinction until the Davoodi & Wood paper, its data lineage and the Jiao et al. (2026) hybrid-ML paper are fully compared.
+
+**Required follow-up:** obtain the full paper; inspect its data-source table, per-source record counts, treatment of duplicate/derived/simulated data, train/test protocol, chemistry encoding, equations, applicability ranges and uncertainty treatment. Map every cited experimental source against our source register before asserting any benchmark gap.
+
+Source checked: publisher record, https://www.sciencedirect.com/science/article/abs/pii/S2949891026002538 ; independent catalogue, https://vufind.lib.tpu.ru/vufind/Record/687177.
