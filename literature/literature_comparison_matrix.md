@@ -56,3 +56,25 @@ The code snippets explicitly omit standard data I/O, scaling pipelines, repetiti
 Terminology correction for our benchmark: TabPFN is the pretrained foundation-model candidate. TabM is an efficient neural ensemble architecture that is trained on the benchmark's training folds; it is not itself a pretrained foundation model. This makes a useful comparison between pretrained tabular priors, fold-trained deep ensembles and conventional tree baselines, but the novelty must remain the independent source-aware audit and evaluation.
 
 The Chow correlation equation's typography/exponent placement must be verified against the original publication and 2020 erratum before implementation. The Hosseini correlation is transcribed in `research/pretrained_tabular_model_benchmark.md`. Correlation-generated predictions are model outputs, not new experimental measurements.
+
+
+## 8. Full supplementary-method inspection: Jiao et al. (2026), Energy & Fuels
+
+**Source inspected:** the nine-page ACS Supporting Information PDF, ef6c01887_si_001.pdf, uploaded by the researcher. The main article and 450-row XLSX are not reproduced in this PDF; the XLSX remains a separate source-data object.
+
+### Directly documented in the SI
+- p. 1: TabM Bayesian search space and optimal configurations are shown separately for H2–pure water, H2–brine and combined systems.
+- pp. 2–3: TabM implementation examples use piecewise-linear embeddings and an ensemble-aware loss. The SI explicitly says standard data I/O, scaling pipelines and repetitive training loops are omitted.
+- pp. 3–5: TabPFN example uses quantile outputs at 0.025, 0.5 and 0.975; internal validation is illustrated with shuffled five-fold KFold (shuffle=True, random_state=42); a separate external-validation stage trains on all internal data and predicts an external dataset. The SI does not identify the external datasets by name in the code excerpt.
+- pp. 4–5: permutation-SHAP and partial-dependence examples are provided.
+- pp. 6–8: empirical correlation forms and parameters are supplied for Chow et al. (2018) H2O–H2 and Hosseini et al. (2022) H2–brine. The Chow equation's typesetting/exponent placement must be checked against the original paper and 2020 erratum before coding.
+
+### What this establishes—and what it does not
+The SI confirms the authors' example internal split is row-wise shuffled K-fold, not an explicitly publication-grouped split. This is not proof that no other grouping or external independence checks occur elsewhere in the main article; the main text must be inspected. The SI documents a separate external blind-testing workflow, but its code excerpt alone does not establish the source-study independence or exact composition of those external datasets. Do not describe the external tests as invalid; classify their independence as not yet verified.
+
+The SI also does not permit reconstruction of the 450-row dataset. The accompanying XLSX is required for row-level source mapping, and original primary papers are required for measurement-level certification.
+
+### Benchmark consequence
+Publication-held-out validation remains a useful independent test for our project, but it cannot yet be claimed as absent from Jiao et al. until the main text is checked. Our protocol should reproduce the reported shuffled-fold evaluation as a secondary comparator where feasible, then evaluate the same eligible data under publication-held-out partitions. Keep TabPFN as the pretrained candidate and TabM as a fold-trained ensemble comparator, not as a pretrained foundation model.
+
+**Source:** ACS Supporting Information, DOI https://doi.org/10.1021/acs.energyfuels.6c01887, nine-page PDF uploaded 21 November 2026.
