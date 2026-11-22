@@ -110,3 +110,7 @@ No gate is considered passed without a repository artefact and verifiable eviden
 
 - **2026-11-21:** Acquired and checksummed the ACS Jiao et al. (2026) XLSX. Extracted 450 rows across nine cited studies; 266 Pendant Drop and 184 Sessile Drop method codes. All records remain provenance-unknown and excluded from the primary benchmark until verified against original sources.
 - **2026-11-21:** Documented a material Hosseini et al. (2022) discrepancy: at 2.76 MPa and 298.15 K the workbook distinguishes pure water (73.57 mN/m) from mixed brine (74.97 mN/m), whereas the legacy CSV labels 74.97 mN/m as pure water and repeats it in a brine block. No merge or correction is authorised pending primary-source verification.
+
+
+- **2026-11-22:** Directly inspected the nine-page ACS Jiao et al. (2026) Supporting Information PDF. Its TabPFN example shows shuffled five-fold KFold for internal validation and a separate external-prediction stage; source-study independence of the external sets and any publication grouping in the main article remain unverified. The SI omits standard data I/O, scaling pipelines and repetitive training loops, so it is not sufficient to reproduce the full workflow or audit the 450 rows.
+- **2026-11-22:** Do not claim that publication-held-out validation is absent from Jiao et al. based on SI snippets alone. Inspect the main article and identify the external datasets before finalising the research gap. Retain publication-held-out evaluation as our planned stringent test, not yet as a proven literature novelty.
