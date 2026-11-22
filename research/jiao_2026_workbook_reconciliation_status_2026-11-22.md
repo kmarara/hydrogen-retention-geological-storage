@@ -72,3 +72,18 @@ That 158-row tranche is still subject to the global lineage/overlap and release 
 6. Keep the original workbook unchanged and use publication-held-out validation for the independent benchmark after all release gates pass.
 
 **Decision:** workbook structure and group allocation re-confirmed; previous source-audit dispositions retained; no new observations promoted to primary eligibility; no model training.
+
+
+## 7. Main-article abstract cross-check: external validation claims (2026-11-22)
+
+The ACS article landing-page abstract was retrieved and inspected; the full-text article page returned HTTP 403 during this review. The abstract reports:
+- internal testing performance for TabPFN of R² = 0.9941, RMSE = 0.92 mN/m and AARD = 1.15%;
+- external results of R² = 0.9923 for H₂–pure water and R² = 0.9841 for H₂–NaCl;
+- qualitative reproduction of macroscopic IFT trends for an unseen quaternary brine system (NaCl + KCl + CaCl₂ + MgCl₂);
+- quantile-regression 95% prediction intervals, with a reported 33% reduction in interval width after incorporating the experimental-method feature.
+
+These are **author-reported abstract claims**, not independently reproduced results. The abstract does not identify the publication/source lineage, exact row counts, pointwise conditions, overlap checks, or whether the external data are independent of every source represented in the 450-row workbook. The SI code shows a separate external prediction stage in which the final TabPFN model is fitted on all internal data and predicts an external dataset, but does not identify that dataset's source records in the displayed code.
+
+**Reproducibility gate:** obtain the full main article and identify the external dataset sources, observation counts, fluid conditions, source publications, and any shared/overlapping measurements with the nine workbook groups. Until that is established, describe the external datasets as *reported by the authors as independent*, not as independently verified publication-held-out tests. The quaternary brine test is chemically distinct from the listed single-salt and mixed-brine groups, but its publication lineage and precise measurement provenance still need checking.
+
+ACS article record: https://doi.org/10.1021/acs.energyfuels.6c01887.
