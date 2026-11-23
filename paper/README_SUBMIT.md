@@ -1,10 +1,10 @@
 # arXiv Submission Package for Hydrogen Storage Site Selection Paper
 
 ## Files
-- `paper.tex` — Main LaTeX source file
-- `references.bib` — Bibliography (BibTeX)
-- `figures/week11_full_integration.png` — Main figure (integrated decision map)
-- `figures/pinn_training_v3.png` — PINN training history figure
+- `paper.tex` - Main LaTeX source file
+- `references.bib` - Bibliography (BibTeX)
+- `figures/week11_full_integration.png` - Main figure (integrated decision map)
+- `figures/pinn_training_v3.png` - PINN training history figure
 
 ## Compilation (local)
 
@@ -53,9 +53,9 @@ pdflatex paper.tex
 - Timeline: ~8-12 weeks first decision
 
 **Backup targets:**
-- International Journal of Hydrogen Energy (Elsevier) — hydrogen-specific
-- Journal of Energy Storage (Elsevier) — storage-focused
-- Energy (Elsevier) — broader energy scope, faster review
+- International Journal of Hydrogen Energy (Elsevier) - hydrogen-specific
+- Journal of Energy Storage (Elsevier) - storage-focused
+- Energy (Elsevier) - broader energy scope, faster review
 
 ## Submission Checklist
 - [ ] LaTeX compiles without errors
